@@ -11,7 +11,6 @@
     <section class="content">
       <v-container>
         <AppContent :content='page_block_one' />
-        <v-btn @click="bugs">dsfdsfsd</v-btn>
       </v-container>
     </section>
 
