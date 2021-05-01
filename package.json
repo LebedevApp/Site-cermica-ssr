@@ -1,0 +1,22 @@
+{
+  "name": "site-ceramica-ssr",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@mdi/font": "^5.9.55",
+    "@nuxtjs/firebase": "^7.5.0",
+    "core-js": "^3.9.1",
+    "firebase": "^8.4.3",
+    "nuxt": "^2.15.3",
+    "vue-slick-carousel": "^1.0.6"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.11.3"
+  }
+}
