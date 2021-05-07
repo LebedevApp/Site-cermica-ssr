@@ -19,8 +19,8 @@
                 link
                 v-for="service in menu.services"
                 :key="service.title"
-                @mouseover="addDiscription(service)"
-                @mouseout="removeDescription"
+                @mouseover.stop="addDiscription(service)"
+                @mouseout.stop="removeDescription"
               >
                 <nuxt-link to="/" class="link text-body-1 white--text">{{
                   service.title
@@ -236,6 +236,8 @@ export default {
 }
 .link {
   text-decoration: none;
+  width: 100%;
+  height: 100%;
 }
 
 .block {

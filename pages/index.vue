@@ -1,6 +1,6 @@
 <template>
   <main>
-    <AppCaorusel :page_slider='page_slider' />
+    <AppCaorusel class="slick" :page_slider='page_slider' />
 
     <section class="advantages-cards">
       <v-container>
@@ -126,3 +126,9 @@ export default {
   components: { AppCaorusel,AppAdvantages,AppContent,AppPartners,AppMultipleCaorusel },
 };
 </script>
+
+<style lang="scss" scoped>
+.slick {
+  position: relative;
+}
+</style>
