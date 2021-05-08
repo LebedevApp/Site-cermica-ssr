@@ -1,7 +1,7 @@
 <template>
   <div class="carouselBlock">
     <VueSlickCarousel v-bind="settings" ref="carousel">
-      <div v-for="slide in page_slider.sliders" :key="slide.img">
+      <div v-for="slide in page_slider.sliders" :key="slide.img" >
         <v-img class="img" :src="slide.img">
           <div class="gradient"></div>
           <v-row justify="center" align="center">
@@ -30,16 +30,22 @@
           </v-row>
         </v-img>
       </div>
+      <template #customPaging="page">
+      <div class="rond" :class="page">
+        
+      </div>
+    </template>
     </VueSlickCarousel>
-    <div v-if="page_slider.sliders" class="all-dots">
+    <!--<div v-if="page_slider.sliders" class="all-dots">
       <div
         class="dots my-3"
         v-for="(slide, i) in page_slider.sliders"
         :key="i"
         @click="goTo(i)"
+        :class="{active : i === i}"
         ref="dot"
       ></div>
-    </div>
+    </div>-->
   </div>
 </template>
 
@@ -54,7 +60,8 @@ export default {
   data() {
     return {
       settings: {
-        dots: false,
+        arrows:false,
+        dots: true,
         fade: true,
         infinite: true,
         speed: 1500,
@@ -62,6 +69,7 @@ export default {
         slidesToScroll: 1,
         autoplay: true,
       },
+      
     };
   },
   computed: {},
@@ -69,6 +77,8 @@ export default {
     goTo(i) {
       //console.log(i)
       this.$refs.carousel.goTo(i);
+      //this.$refs.dot
+      console.log(this.$refs.dota)
       //console.log(this.$refs.carousel)
       //this.$refs.dot[i].className = "active";
     },
@@ -79,6 +89,46 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.rond{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid rgb(4, 138, 248);
+}
+.slick-active > .rond {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(247, 247, 247, 0.884);
+  border: 3px solid rgb(250, 55, 55);
+}
+.slick-dots {
+  top: 50%;
+  left: 5%;
+  z-index: 20;
+  transform: translateY(-25%);
+}
+::v-deep .slick-slide {
+  height: 85vh;
+}
+::v-deep .slick-dots {
+ top: 50%;
+  left: 0%;
+  z-index: 20;
+  transform: translateY(-8%);
+  width: 0;
+  //transform: scaleY(-50%);
+  
+    li {
+      width: 25px;
+      
+      @media (max-width: 750px) {
+        
+        display: none;
+      }
+    }
+  }
 .all-dots {
   position: absolute;
   top: 50%;

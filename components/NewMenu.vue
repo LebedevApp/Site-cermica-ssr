@@ -7,11 +7,13 @@
         </v-col>
         <v-spacer></v-spacer>
         <v-col class="text-right">
-          <v-btn x-large color="white" icon @click="close"><v-icon>mdi-close</v-icon> </v-btn>
+          <v-btn x-large color="white" icon @click="close"
+            ><v-icon>mdi-close</v-icon>
+          </v-btn>
         </v-col>
       </v-row>
       <div class="desktop">
-        <v-divider class="mt-16"></v-divider>
+        <v-divider class="mt-6"></v-divider>
         <v-container>
           <v-row>
             <v-col cols="6">
@@ -76,7 +78,7 @@
                 </v-list-item>
               </v-list-group>
             </v-col>
-            <v-divider vertical></v-divider>
+            
             <v-col cols="6">
               <v-row>
                 <v-card
@@ -133,53 +135,67 @@
         </v-container>
       </div>
 
-
-
       <div class="mobile">
-      <v-divider class="mt-16"></v-divider>
-      <v-list-group color="white" :value="true" prepend-icon="mdi-cog-outline">
-        <template v-slot:activator>
-          <v-list-item-title class="white--text text-h6 ml-2"
-            >Услуги</v-list-item-title
-          >
-        </template>
-        <v-list-item link v-for="service in menu.services" :key="service.title">
-          <nuxt-link to="/" class="link text-body-1 white--text">{{
-            service.title
-          }}</nuxt-link>
-        </v-list-item>
-      </v-list-group>
-
-      <v-list-group color="white" :value="true" prepend-icon="mdi-note">
-        <template v-slot:activator>
-          <v-list-item-title class="white--text text-h6 ml-2"
-            >Документация</v-list-item-title
-          >
-        </template>
-        <v-list-item
-          link
-          v-for="documentation in menu.documentation"
-          :key="documentation.title"
+        <v-divider class="mt-6"></v-divider>
+        <v-list-group
+          color="white"
+          :value="true"
+          prepend-icon="mdi-cog-outline"
         >
-          <nuxt-link to="/" class="link text-body-1 white--text">{{
-            documentation.title
-          }}</nuxt-link>
-        </v-list-item>
-      </v-list-group>
-
-      <v-list-group color="white" :value="true" prepend-icon="mdi-account-box ">
-        <template v-slot:activator>
-          <v-list-item-title class="white--text text-h6 ml-2"
-            >Контакты</v-list-item-title
+          <template v-slot:activator>
+            <v-list-item-title class="white--text text-h6 ml-2"
+              >Услуги</v-list-item-title
+            >
+          </template>
+          <v-list-item
+            link
+            v-for="service in menu.services"
+            :key="service.title"
           >
-        </template>
-        <v-list-item link v-for="contact in menu.contact" :key="contact.title">
-          <nuxt-link to="/" class="link text-body-1 white--text">{{
-            contact.title
-          }}</nuxt-link>
-        </v-list-item>
-      </v-list-group>
-    </div>
+            <nuxt-link to="/" class="link text-body-1 white--text">{{
+              service.title
+            }}</nuxt-link>
+          </v-list-item>
+        </v-list-group>
+
+        <v-list-group color="white" :value="true" prepend-icon="mdi-note">
+          <template v-slot:activator>
+            <v-list-item-title class="white--text text-h6 ml-2"
+              >Документация</v-list-item-title
+            >
+          </template>
+          <v-list-item
+            link
+            v-for="documentation in menu.documentation"
+            :key="documentation.title"
+          >
+            <nuxt-link to="/" class="link text-body-1 white--text">{{
+              documentation.title
+            }}</nuxt-link>
+          </v-list-item>
+        </v-list-group>
+
+        <v-list-group
+          color="white"
+          :value="true"
+          prepend-icon="mdi-account-box "
+        >
+          <template v-slot:activator>
+            <v-list-item-title class="white--text text-h6 ml-2"
+              >Контакты</v-list-item-title
+            >
+          </template>
+          <v-list-item
+            link
+            v-for="contact in menu.contact"
+            :key="contact.title"
+          >
+            <nuxt-link to="/" class="link text-body-1 white--text">{{
+              contact.title
+            }}</nuxt-link>
+          </v-list-item>
+        </v-list-group>
+      </div>
     </v-container>
   </div>
 </template>

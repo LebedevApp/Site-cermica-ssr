@@ -76,11 +76,11 @@ export default {
       this.$refs.ros.style.width = '50px'
       this.$refs.ros.style.height = '50px'
       this.$refs.ros.style.top = '5%'
-      this.$refs.ros.style.left = '5%'
+      this.$refs.ros.style.left = '35%'
       this.$refs.gas.style.boxShadow = 'none'
       this.$refs.gas.style.width = '50px'
       this.$refs.gas.style.height = '50px'
-      this.$refs.gas.style.top = '25%'
+      this.$refs.gas.style.top = '5%'
       this.$refs.gas.style.left = '5%'
       this.$refs.img.style.transform = 'translateZ(0px)'
       //this.$refs.btn.style.transform = 'translateZ(0px)'
@@ -113,7 +113,7 @@ export default {
 .ros{
    position: absolute;
   top: 5%;
-  left: 5%;
+  left: 35%;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -121,7 +121,7 @@ export default {
 }
 .gas{
   position: absolute;
-  top: 35%;
+  top: 5%;
   left: 5%;
   width: 50px;
   height: 50px;
