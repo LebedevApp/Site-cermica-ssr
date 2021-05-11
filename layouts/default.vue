@@ -29,7 +29,7 @@
               v-for="service in menuList.services"
               :key="service.title"
             >
-              <nuxt-link class="link secondary--text font-weight-ligh" to="/">{{
+              <nuxt-link class="link secondary--text font-weight-ligh" :to="service.to">{{
                 service.title
               }}</nuxt-link>
             </v-list-item>
@@ -91,7 +91,7 @@ export default {
             title: "Пористая керамика",
             description:
               "Разработка и производство керамических фильтров для разделения и очистки жидких и газообразных сред.",
-            to: "/",
+            to: "/porousCeramics",
           },
           {
             img: "img/DSC_6036-min.jpg",
