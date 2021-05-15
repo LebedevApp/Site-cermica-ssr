@@ -3,9 +3,9 @@
     <AppCaorusel class="slick" :page_slider='page_slider' />
 
     <section class="advantages-cards">
-      <v-container>
+      
         <AppAdvantages :page_cards='page_cards.cards' />
-      </v-container>
+      
     </section>
 
     <section class="content">

@@ -28,10 +28,12 @@
               link
               v-for="service in menuList.services"
               :key="service.title"
+              :to="service.to"
+              class="link secondary--text font-weight-ligh"
             >
-              <nuxt-link class="link secondary--text font-weight-ligh" :to="service.to">{{
+              {{
                 service.title
-              }}</nuxt-link>
+              }}
             </v-list-item>
           </v-col>
           <v-col cols="12" lg="6" md="6" sm="12">
@@ -87,6 +89,10 @@ export default {
       menuList: {
         services: [
           {
+            title: 'Главная страница',
+            to: '/'
+          },
+          {
             img: "img/DSC_6025-min.jpg",
             title: "Пористая керамика",
             description:
@@ -97,21 +103,21 @@ export default {
             img: "img/DSC_6036-min.jpg",
             title: "Керамические мембраны",
             description: `Производство микро и ультрафильтрационных керамических мембранных фильтров. Проектирование и изготовление экспериментальных и промышленных установок микро и ультрафильтрации. Консультации по вопросам мембранного разделения.`,
-            to: "/",
+            to: "/ceramicMembranes",
           },
           {
             img: "img/_DSC9903-min.jpg",
             title: "Современные технологии водоподготовки",
             description:
               "Проектирование и производство стационарных и мобильных установок водоподготовки на основе технологии озоноультрафильтрации с применением  мембранных фильтроэлементов.",
-            to: "/",
+            to: "/waterTreatment",
           },
           {
             img: "img/e41c130f622f6a21470226ceafd06af3-min.jpg",
             title: "Лабораторные исследования разделения жидких растворов",
             description:
               "Проведение лабораторных испытаний мембранного разделения и концентрирования жидких растворов. Подбор и определение производительности керамических мембран на продукте заказчика. Исследования и разработка способов регенерации мембранных фильтров. ",
-            to: "/",
+            to: "/research",
           },
         ],
         documentation: [

@@ -7,10 +7,10 @@
             <div class="img_content">
               <v-list-item-content>
                 <h1
-                  class="img_title white--text text-h4 text-lg-h2 text-left text-md-center font-weight-medium"
+                  class="img_title white--text text-h4 text-lg-h3 text-left  font-weight-medium"
                 >
                   <span
-                    class="light-blue--text text-h4 text-lg-h2 font-weight-black"
+                    class="light-blue--text text-h4 text-lg-h3 font-weight-black"
                     >{{ page.title.split("").slice(0, 3).join("") }}</span
                   >{{ page.title.split("").splice(3).join("") }}
                 </h1>
@@ -63,7 +63,7 @@ export default {
     position: relative;
   }
   &_content {
-    width: 50%;
+    width: 70%;
   }
   &_text {
     &::after {

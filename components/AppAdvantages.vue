@@ -1,16 +1,21 @@
 <template>
   <div>
-    <v-list max-width="550" class="mx-auto">
-      <v-list-item-content>
-        <h4 class="text-center font-weight-light">
-          “Многие программы электронной вёрстки и редакторы HTML используют
-          Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым
-          словам "lorem ipsum" сразу показывает”
-        </h4>
-      </v-list-item-content>
-    </v-list>
+    <v-row justify="center" align="center">
+      <v-col> <v-divider></v-divider></v-col>
+      <v-col cols="8"
+        ><v-container>
+          <v-list-item-content class="text-center text-subtitle-1 text-md-h4 font-weight-thin">
+            Our new Ultium Platform will help put everyone in an EV, moving us closer to a world with zero emissions.
+          </v-list-item-content>
+        </v-container></v-col
+      >
+      <v-col><v-divider></v-divider></v-col>
+    </v-row>
 
-    <AppCards :cards='page_cards' />
+    <v-container>
+      <AppCards :cards='page_cards' />
+    </v-container>
+    
   </div>
 </template>
 
