@@ -47,10 +47,12 @@
               link
               v-for="documentation in menuList.documentation"
               :key="documentation.title"
+              :to="documentation.to"
+              class="link secondary--text font-weight-ligh"
             >
-              <nuxt-link class="link secondary--text font-weight-ligh" to="/">{{
+              {{
                 documentation.title
-              }}</nuxt-link>
+              }}
             </v-list-item>
 
             <v-list-item-subtitle
@@ -124,6 +126,10 @@ export default {
           {
             title: "Документация",
             to: "/",
+          },
+          {
+            title: "Наши партнеры",
+            to: "/partners",
           },
         ],
         contact: [

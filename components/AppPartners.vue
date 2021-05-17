@@ -20,7 +20,7 @@
           >
         </v-list-item-content>
         <div class="text-center text-md-right">
-          <v-btn class="mx-auto" outlined color="white">
+          <v-btn class="mx-auto" outlined color="white" to="/partners">
             Подробней
           </v-btn>
         </div>
