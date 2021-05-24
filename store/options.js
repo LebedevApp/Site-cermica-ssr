@@ -29,6 +29,46 @@ export const state = () => ({
         }
       ]
       
+  },
+  LINKS_THIS_SITE: {
+    SERVICE: [
+      {
+        title: "Главная страница",
+        to: "/",
+      },
+      {
+        title: "Пористая керамика",
+        to: "/porousCeramics",
+      },
+      {
+        title: "Керамические мембраны",
+        to: "/ceramicMembranes",
+      },
+      {
+        title: "Современные технологии водоподготовки",
+        to: "/waterTreatment",
+      },
+      {
+        title: "Лабораторные исследования разделения жидких растворов",
+        to: "/research",
+      },
+    ],
+    DOCUMENTATIONS: [
+      {
+        title: "Документация",
+        to: "/",
+      },
+      {
+        title: "Наши партнеры",
+        to: "/partners",
+      },
+    ],
+    CONTACT: [
+      {
+        title: "Контакты",
+        to: "/contact",
+      },
+    ]
   }
 });
 
@@ -43,5 +83,8 @@ export const actions = {
 export const getters = {
   SAVE_CONTACT_INFO(state) {
       return state.CONTACT_INFO
+  },
+  GET_LINKS(state) {
+    return state.LINKS_THIS_SITE
   }
 };

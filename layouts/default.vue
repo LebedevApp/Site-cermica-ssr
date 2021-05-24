@@ -11,64 +11,14 @@
     </transition>
 
     <v-main>
-      <nuxt />
+      
+         <nuxt />
+     
+     
     </v-main>
 
     <v-footer width="100%" color="#75c1ff">
-      <v-container class="my-8">
-        <v-row justify="center" align="start">
-          <v-col cols="12" lg="6" md="6" sm="12">
-            <v-list-item-subtitle
-              class="ml-2 secondary--text text-body-1 text-lg-h6 font-weight-black text-center text-md-left"
-              ><v-icon class="mx-2">mdi-cog-outline</v-icon>Услуги
-              компании</v-list-item-subtitle
-            >
-            <v-divider class="my-3"></v-divider>
-            <v-list-item
-              link
-              v-for="service in menuList.services"
-              :key="service.title"
-              :to="service.to"
-              class="link secondary--text font-weight-ligh"
-            >
-              {{ service.title }}
-            </v-list-item>
-          </v-col>
-          <v-col cols="12" lg="6" md="6" sm="12">
-            <v-list-item-subtitle
-              class="ml-2 secondary--text text-body-1 text-lg-h6 font-weight-black text-center text-md-left"
-              ><v-icon class="mx-2">mdi-note</v-icon
-              >Документация</v-list-item-subtitle
-            >
-            <v-divider class="my-3"></v-divider>
-            <v-list-item
-              link
-              v-for="documentation in menuList.documentation"
-              :key="documentation.title"
-              :to="documentation.to"
-              class="link secondary--text font-weight-ligh"
-            >
-              {{ documentation.title }}
-            </v-list-item>
-
-            <v-list-item-subtitle
-              class="ml-2 secondary--text text-body-1 text-lg-h6 font-weight-black text-center text-md-left"
-              ><v-icon class="mx-2">mdi-account-box</v-icon
-              >Контакты</v-list-item-subtitle
-            >
-            <v-divider class="my-3"></v-divider>
-            <v-list-item
-              link
-              v-for="contact in menuList.contact"
-              :key="contact.title"
-              :to="contact.to"
-              class="link secondary--text font-weight-ligh"
-            >
-              {{ contact.title }}
-            </v-list-item>
-          </v-col>
-        </v-row>
-      </v-container>
+      <AppLinks />
     </v-footer>
   </v-app>
 </template>
@@ -77,6 +27,7 @@
 import appHeader from "../components/Header";
 import appMenu from "../components/appMenu";
 import appNewMenu from "../components/NewMenu";
+import AppLinks from "../components/LnksSite"
 
 export default {
   data() {
@@ -156,6 +107,7 @@ export default {
     appHeader,
     appMenu,
     appNewMenu,
+    AppLinks
   },
   async fetch() {
     await this.$store.dispatch("nuxtServerInit");
@@ -224,6 +176,20 @@ body {
   opacity: 1;
 }
 .toggleMenu-leave-to {
+  opacity: 0;
+  transition: all 0.5s;
+}
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-to {
+  opacity: 1;
+  transition: all 0.5s;
+}
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave-to {
   opacity: 0;
   transition: all 0.5s;
 }
