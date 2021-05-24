@@ -31,9 +31,7 @@
               :to="service.to"
               class="link secondary--text font-weight-ligh"
             >
-              {{
-                service.title
-              }}
+              {{ service.title }}
             </v-list-item>
           </v-col>
           <v-col cols="12" lg="6" md="6" sm="12">
@@ -50,9 +48,7 @@
               :to="documentation.to"
               class="link secondary--text font-weight-ligh"
             >
-              {{
-                documentation.title
-              }}
+              {{ documentation.title }}
             </v-list-item>
 
             <v-list-item-subtitle
@@ -65,14 +61,13 @@
               link
               v-for="contact in menuList.contact"
               :key="contact.title"
+              :to="contact.to"
+              class="link secondary--text font-weight-ligh"
             >
-              <nuxt-link class="link secondary--text font-weight-ligh" to="/">{{
-                contact.title
-              }}</nuxt-link>
+              {{ contact.title }}
             </v-list-item>
           </v-col>
         </v-row>
-        
       </v-container>
     </v-footer>
   </v-app>
@@ -91,8 +86,8 @@ export default {
       menuList: {
         services: [
           {
-            title: 'Главная страница',
-            to: '/'
+            title: "Главная страница",
+            to: "/",
           },
           {
             img: "img/DSC_6025-min.jpg",
@@ -135,7 +130,7 @@ export default {
         contact: [
           {
             title: "Контакты",
-            to: "/",
+            to: "/contact",
           },
         ],
       },

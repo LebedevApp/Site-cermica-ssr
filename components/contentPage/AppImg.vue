@@ -17,6 +17,7 @@
               </v-list-item-content>
 
               <v-list-item-content
+                v-if="page.text"
                 class="img_text white--text text-body-2 text-md-h6 font-weight-medium text-left my-3"
               >
                 {{ page.text }}
