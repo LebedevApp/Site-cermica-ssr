@@ -10,9 +10,6 @@
 
     <AppTimeLine /> 
 
-    <v-container>
-      <AppContent :content='page_block_content' />
-    </v-container>
     
     <section class="works">
       <AppMultipleCaorusel :page_articles='page_articles' />

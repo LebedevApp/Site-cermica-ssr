@@ -4,13 +4,7 @@
 
     <AppContentPorousCeramics />
 
-    
-
-    <section class="partners" style="background: #75c1ff">
-      <v-container>
-        <AppPartners :content='page_block_partners' />
-      </v-container>
-    </section>
+    <AppMapContent />
 
     <AppCharacteristic :content='characteristic' />
 
@@ -45,9 +39,10 @@ import AppPartners from "../../components/AppPartners";
 import AppCharacteristic from '@/components/contentPage/Characteristic'
 import AppTabsWrapper from '@/components/contentPage/tabs/TabsWrapper'
 import AppTimeLine from '@/components/contentPage/AppTimeLine'
+import AppMapContent from '../../components/contentPage/MapContent'
 
 export default {
-  components: { AppImg,AppContentPorousCeramics,AppPartners,AppTabsWrapper,AppTimeLine,AppCharacteristic},
+  components: { AppImg,AppContentPorousCeramics,AppPartners,AppTabsWrapper,AppTimeLine,AppCharacteristic,AppMapContent},
   data() {
     return {
       img_block: {
