@@ -10,6 +10,7 @@ export const state = () => ({
               prof: 'Коммерческий директор',
               name: 'Адамович Владимир Игоревич',
               tel:'+7 (968)-968-07-80',
+              telLink: 'tel:+79689680780',
               watsapp: true,
               telegramm: true
           },
@@ -17,6 +18,7 @@ export const state = () => ({
             prof: 'Директор по науке',
             name: 'Покровский Данила Данилович',
             tel:'+7 (916)-681-80-91',
+            telLink: 'tel:+79166818091',
             watsapp: false,
             telegramm: false
         },
@@ -24,6 +26,7 @@ export const state = () => ({
             prof: 'Руководитель производства',
             name: 'Якушев Денис Анатольевич',
             tel:'+7 (910)-457-72-47',
+            telLink: 'tel:+79104577247',
             watsapp: true,
             telegramm: false
         }

@@ -18,11 +18,6 @@
             
           </v-list-item-content>
           <v-divider class="my-4"></v-divider>
-          <div class="text-center text-md-left">
-            <v-btn class="mx-auto mt-6" outlined color="blue darken-1">
-              Подробней
-            </v-btn>
-          </div>
         </v-col>
         <v-col cols="12" lg="5" md="5" sm="12">
             <v-list color="rgba(0,0,0,0)" v-for="item in content.advantages" :key="item.icon">

@@ -58,12 +58,11 @@ export default {
   width: 100%;
   height: 100%;
   background-color: rgba(117, 193, 255, 1);
-  
   overflow-y: hidden;
   position: fixed;
   z-index: 50;
   margin-right: 10px;
-  overflow-y: scroll;
+  //overflow-y: scroll;
 }
 .link {
   text-decoration: none;

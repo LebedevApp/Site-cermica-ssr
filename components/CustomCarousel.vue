@@ -100,7 +100,6 @@ export default {
     change_slide(slide, i) {
       this.idx = i;
       this.slide = slide;
-      console.log(slide);
     },
     setTime() {
       setInterval(() => {
