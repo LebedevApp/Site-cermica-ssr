@@ -77,7 +77,9 @@ export const mutations = {
 };
 
 export const actions = {
-  
+  loadContent({commit}, payload) {
+    console.log(payload)
+  }
 };
 
 export const getters = {

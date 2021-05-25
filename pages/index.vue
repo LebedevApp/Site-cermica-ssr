@@ -1,6 +1,9 @@
 <template>
   <main>
-    <AppCaorusel class="slick" :page_slider='page_slider' />
+    <!--<AppCaorusel class="slick" :page_slider='page_slider' />-->
+
+
+    <AppCustomCarousel />
 
     <section class="advantages-cards">
       
@@ -53,6 +56,7 @@ import AppAdvantages from "../components/AppAdvantages";
 import AppContent from "../components/AppContent";
 import AppPartners from "../components/AppPartners";
 import AppMultipleCaorusel from "../components/AppMultipleCaorusel";
+import AppCustomCarousel from "../components/CustomCarousel"
 
 export default {
   data() {
@@ -64,6 +68,9 @@ export default {
     async bugs() {
       await this.$store.dispatch('crm/loadContent')
       
+    },
+    slide(payload) {
+      console.log(payload)
     }
   },
   computed: {
@@ -108,7 +115,7 @@ export default {
     
     
   },
-  components: { AppCaorusel,AppAdvantages,AppContent,AppPartners,AppMultipleCaorusel },
+  components: { AppCaorusel,AppAdvantages,AppContent,AppPartners,AppMultipleCaorusel,AppCustomCarousel },
 };
 </script>
 
