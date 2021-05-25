@@ -32,11 +32,16 @@
                 class="email white--text"
                 style="text-decoration: none"
               >
-                <v-menu transition="slide-y-transition" bottom min-width="150" max-width="300">
+                <v-menu
+                  transition="slide-y-transition"
+                  bottom
+                  min-width="150"
+                  max-width="350"
+                >
                   <template v-slot:activator="{ on, attrs }">
                     <v-icon
                       class="mx-2"
-                      size="18"
+                      size="25"
                       color="white"
                       v-bind="attrs"
                       v-on="on"
@@ -48,25 +53,33 @@
                       v-for="contact in CONTACT_INFO.tel"
                       :key="contact.tel"
                     >
-                    <v-list-item-content>
-                      <v-list-item-title>{{ contact.name }}</v-list-item-title>
-                      <v-list-item-subtitle>{{
-                        contact.prof
-                      }}</v-list-item-subtitle>
-                      <v-list-item
-                        ><v-icon class="mx-2">mdi-phone</v-icon
-                        ><a
-                          class="links black--text"
-                          style="text-decoration: none"
-                          :href="contact.telLink"
+                      <v-list-item-content>
+                        <v-list-item>
+                          <v-avatar color="indigo" size="36" class="ml-n4 mr-3" >
+                            <v-icon dark> mdi-account-circle </v-icon>
+                          </v-avatar>
+                          <v-list-item-content>
+                            <v-list-item-title>{{
+                          contact.name
+                        }}</v-list-item-title>
+                        <v-divider></v-divider>
+                        <v-list-item-subtitle>{{
+                          contact.prof
+                        }}</v-list-item-subtitle>
+                          </v-list-item-content>
+                        </v-list-item>
+                        
+                        <v-list-item class="mt-2"
+                          ><v-icon class="ml-5 mr-3">mdi-phone</v-icon
+                          ><a
+                            class="links black--text"
+                            style="text-decoration: none"
+                            :href="contact.telLink"
+                          >
+                            {{ contact.tel }}</a
+                          ></v-list-item
                         >
-                          {{contact.tel}}</a
-                        ></v-list-item
-                      >
-                      <v-divider></v-divider>
-                    </v-list-item-content>
-                    
-                      
+                      </v-list-item-content>
                     </v-list-item>
                   </v-list>
                 </v-menu>

@@ -19,7 +19,7 @@
               >{{ card.text }}</v-card-text
             >
             <div class="text-right mb-4 mr-4">
-              <v-btn rounded outlined color="white">Узнать</v-btn>
+              <v-btn rounded outlined color="white" :to="card.to">Узнать</v-btn>
             </div>
           </div>
         </v-card>
