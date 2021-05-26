@@ -24,7 +24,7 @@
                   {{ card.text }}
                 </v-card-text>
                 <v-card-actions class="text-center">
-                  <v-btn class="ma-2" outlined color="indigo">
+                  <v-btn class="ma-2" outlined color="indigo" to="/article">
                     Подробней
                   </v-btn>
                 </v-card-actions>

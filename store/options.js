@@ -59,7 +59,11 @@ export const state = () => ({
     DOCUMENTATIONS: [
       {
         title: "Документация",
-        to: "/",
+        to: "/documentation",
+      },
+      {
+        title: "Статьи",
+        to: "/article-cards",
       },
       {
         title: "Наши партнеры",

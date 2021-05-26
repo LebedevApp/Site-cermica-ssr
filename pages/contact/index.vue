@@ -1,13 +1,21 @@
 <template>
   <section class="contact">
-    <AppImg :page="img_block" />
+    <AppArticleImg :content="img_block.img" />
 
-    <v-container>
-      <v-list-item-title
-        class="text-left text-subtitle-1 text-md-h4 font-weight-thin mt-8"
-        >Наши контакты</v-list-item-title
+    <v-row justify="center" align="center">
+      <v-col> <v-divider></v-divider></v-col>
+      <v-col cols="8"
+        ><v-container>
+          <v-list-item-content >
+              <v-list-item-title class="text-center text-subtitle-1 text-md-h4 font-weight-thin">{{img_block.title}}</v-list-item-title>
+          </v-list-item-content>
+        </v-container></v-col
       >
-      <v-divider></v-divider>
+      <v-col><v-divider></v-divider></v-col>
+    </v-row>
+    <v-container>
+
+    
       <v-list-item-content>
           <v-list-item-action-text class="my-5 text-left text-subtitle-1 text-md-h6 font-weight-regular mt-8">EMAIL: {{CONTACT_INFO.email}}</v-list-item-action-text>
           <v-list-item-action-text class="my-5 text-left text-subtitle-1 text-md-h6  mt-8">Адрес: {{CONTACT_INFO.adress}}</v-list-item-action-text>
@@ -60,6 +68,7 @@
 </template>
 
 <script>
+import AppArticleImg from "../../components/article/AppArticleImg";
 import AppImg from "../../components/contentPage/AppImg";
 import { yandexMap, ymapMarker } from "vue-yandex-maps";
 
@@ -68,6 +77,7 @@ export default {
     AppImg,
     yandexMap,
     ymapMarker,
+    AppArticleImg
   },
   data() {
     return {

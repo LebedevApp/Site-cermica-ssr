@@ -26,6 +26,7 @@
                       dark
                       x-large
                       elevation="10"
+                      to="/article"
                       ><v-icon size="36" class="mr-2">
                         mdi-book-open-page-variant
                       </v-icon>

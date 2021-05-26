@@ -17,7 +17,6 @@
               class="white--text my-4 my-md-3 font-weight-light text-caption text-sm-body-2 text-md-body-2 text-xl-h6 text-center text-md-left"
               >{{ tab.text }}</v-list-item-action-text
             >
-            <v-btn v-if="tab.to" style="display: block" class="ma-2 mt-8" outlined color="white">Подробней</v-btn>
           </div>
         </v-container>
       </div>

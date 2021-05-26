@@ -13,7 +13,7 @@
               {{ content.subtitle }}</v-list-item-action-text>
         </v-list-item-content>
         <div class="text-center text-md-left">
-            <v-btn class="mx-auto" outlined color="blue darken-1"> Подробней </v-btn>
+            <v-btn class="mx-auto" outlined color="blue darken-1" to="/article"> Подробней </v-btn>
         </div>
       </v-list>
     </v-col>
