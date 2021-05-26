@@ -1,6 +1,6 @@
 <template>
   <section class="contact">
-    <AppArticleImg :content="img_block.img" />
+    <AppArticleImg :content="img_block" />
 
     <v-row justify="center" align="center">
       <v-col> <v-divider></v-divider></v-col>
