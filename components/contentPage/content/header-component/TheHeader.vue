@@ -153,19 +153,23 @@
 
 <script>
 export default {
+  name: 'app-header',
+
   data() {
     return {
       dialog: false,
     };
   },
-  methods: {
-    openMenu() {
-      this.$emit("openMenu");
-    },
-  },
+
   computed: {
     CONTACT_INFO() {
       return this.$store.getters["options/SAVE_CONTACT_INFO"];
+    },
+  },
+
+  methods: {
+    openMenu() {
+      this.$emit("openMenu");
     },
   },
 };

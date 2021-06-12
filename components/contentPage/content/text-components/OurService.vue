@@ -34,6 +34,8 @@
 
 <script>
 export default {
+  name: 'our-sevice',
+  
   data() {
     return {
       content: {

@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  props: ["content"],
+  props: ["content"], // должен принимать обьект
   data() {
     return {
       text: null,

@@ -1,78 +1,42 @@
 <template>
   <main>
-    <!--<AppCaorusel class="slick" :page_slider='page_slider' />-->
+    <app-carousel />
 
+    <app-advantages :page_cards="page_cards.cards" />
 
-    <AppCustomCarousel />
+    <app-content :content="page_block_one" />
 
-    <section class="advantages-cards">
-      
-        <AppAdvantages :page_cards='page_cards.cards' />
-      
-    </section>
+    <app-partners :content="page_block_partners" />
 
-    <section class="content">
-      <v-container>
-        <AppContent :content='page_block_one' />
-      </v-container>
-    </section>
+    <app-content class="mt-5" :content="page_block_two" />
 
-    <section class="partners" style="background: #75c1ff">
-      <v-container>
-        <AppPartners :content='page_block_partners' />
-      </v-container>
-    </section>
+    <app-multiple-caorusel :page_articles="page_articles" />
 
-    <section class="content">
-      <v-container>
-        <AppContent class="mt-5" :content='page_block_two' />
-      </v-container>
-    </section>
-
-    <section class="works">
-      <AppMultipleCaorusel :page_articles='page_articles' />
-    </section>
-
-    <section class="socialLinks">
-      <v-container>
-        <v-list>
-          <v-list-item-title class="text-subtitle-1 text-md-h4 font-weight-black text--secondary text-center">Social links</v-list-item-title>
-          <v-row justify="center" class="my-5">
-            <v-icon class="mx-2" size="48">mdi-twitter</v-icon>
-            <v-icon class="mx-2" size="48">mdi-facebook</v-icon>
-            <v-icon class="mx-2" size="48">mdi-vk</v-icon>
-            <v-icon class="mx-2" size="48">mdi-instagram</v-icon>
-          </v-row>
-        </v-list>
-      </v-container>
-    </section>
-
+    <app-social-links />
   </main>
 </template>
 
 <script>
-import AppCaorusel from "../components/Caorusel";
-import AppAdvantages from "../components/AppAdvantages";
-import AppContent from "../components/AppContent";
-import AppPartners from "../components/AppPartners";
-import AppMultipleCaorusel from "../components/AppMultipleCaorusel";
-import AppCustomCarousel from "../components/CustomCarousel"
+import AppCarousel from "@/components/contentPage/content/carousel/Carousel";
+import AppAdvantages from "@/components/contentPage/content/cards-components/Advantages";
+import AppContent from "@/components/contentPage/content/text-components/Content";
+import AppPartners from "@/components/contentPage/content/text-components/Partners";
+import AppMultipleCaorusel from "@/components/contentPage/content/carousel/MultipleCaorusel";
+import AppSocialLinks from "@/components/contentPage/content/menu-components/SocialLinks";
 
 export default {
-  data() {
-    return {
-      
-    };
+  name: "main-page",
+
+  components: {
+    AppAdvantages,
+    AppContent,
+    AppPartners,
+    AppMultipleCaorusel,
+    AppCarousel,
+    AppSocialLinks
   },
-  methods: {
-    async bugs() {
-      await this.$store.dispatch('crm/loadContent')
-      
-    },
-    slide(payload) {
-      console.log(payload)
-    }
-  },
+
+  // в поле computed стоит использовать ...mapGetters()
   computed: {
     site_content() {
       return this.$store.getters["crm/getContent"];
@@ -111,11 +75,14 @@ export default {
       return this.page.content.find((key) => {
         return key.blockName === "Блок-слайдер со статьями";
       });
-    }
-    
-    
+    },
   },
-  components: { AppCaorusel,AppAdvantages,AppContent,AppPartners,AppMultipleCaorusel,AppCustomCarousel },
+
+  methods: {
+    slide(payload) {
+      console.log(payload);
+    },
+  },
 };
 </script>
 

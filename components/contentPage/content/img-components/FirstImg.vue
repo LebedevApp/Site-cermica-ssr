@@ -32,12 +32,9 @@
 
 <script>
 export default {
+  name: 'first-img',
+
   props: ['page'],
-  data() {
-    return {
-      
-    };
-  },
 };
 </script>
 

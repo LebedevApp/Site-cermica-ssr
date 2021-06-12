@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    
+    <h3>{{error}}</h3>
   </v-app>
 </template>
 

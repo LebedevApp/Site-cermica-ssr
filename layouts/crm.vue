@@ -24,6 +24,7 @@ export default {
   data() {
     return {
         drawer: true,
+        // удалить обьект тк о принимет данные с сервера
         treeview: [
             {
                 id:1,

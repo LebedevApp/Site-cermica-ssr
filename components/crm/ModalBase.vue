@@ -42,7 +42,7 @@
 
 <script>
 export default {
-  props: ["content"],
+  props: ["content"], //Должен принимать обьект
   data() {
     return {
       text: null,

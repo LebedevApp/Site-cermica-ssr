@@ -12,30 +12,32 @@
           </v-btn>
         </v-col>
       </v-row>
-      </v-container>
+    </v-container>
 
-      <v-container>
-        <v-text-field
-            solo
-            label="Что-то ищем?"
-            prepend-icon="mdi-magnify"
-          ></v-text-field>
-      </v-container>
+    <v-container>
+      <v-text-field
+        solo
+        label="Что-то ищем?"
+        prepend-icon="mdi-magnify"
+      ></v-text-field>
+    </v-container>
 
-      <AppLinks @closeMenu='close' />
-    
+    <app-links @closeMenu="close" />
   </div>
 </template>
 
 <script>
-import AppLinks from "../components/LnksSite"
+import AppLinks from "@/components/contentPage/content/menu-components/LinksToMenu";
+
 export default {
-  components: {AppLinks},
+  name: "Menu",
+
+  components: { AppLinks },
+
   data() {
-    return {
-     
-    };
+    return {};
   },
+
   methods: {
     close() {
       this.$emit("close");
@@ -62,7 +64,6 @@ export default {
   position: fixed;
   z-index: 50;
   margin-right: 10px;
-  //overflow-y: scroll;
 }
 .link {
   text-decoration: none;
@@ -73,7 +74,6 @@ export default {
 .block {
   overflow: hidden;
 }
-
 
 @media (max-width: 1025px) {
   .desktop {

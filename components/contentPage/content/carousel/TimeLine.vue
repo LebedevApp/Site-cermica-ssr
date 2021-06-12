@@ -39,9 +39,12 @@
 import VueSlickCarousel from "vue-slick-carousel";
 
 export default {
+  name: 'time-line',
+
   components: {
     VueSlickCarousel,
   },
+
   data() {
     return {
       settings: {
@@ -127,6 +130,7 @@ export default {
       ],
     };
   },
+  
   methods: {
     next() {
       this.$refs.carousel.next();

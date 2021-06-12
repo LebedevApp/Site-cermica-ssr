@@ -1,4 +1,4 @@
-import firebase from "firebase/app"
+import firebase from "firebase/app";
 import "firebase/database";
 
 export const state = () => ({
@@ -6,34 +6,31 @@ export const state = () => ({
 });
 
 export const mutations = {
-    saveContent(state, payload) {
-      state.allContent = payload
-      //console.log(state)
-    },
-    loadContent(state, payload) {
-      
-      state.allContent = payload
-      //console.log(state.allContent)
-    }
+  saveContent(state, payload) {
+    state.allContent = payload;
+  },
+  loadContent(state, payload) {
+    state.allContent = payload;
+  }
 };
 
+// Нужен обработчик ошибок try catch
 export const actions = {
   async nuxtServerInit({ dispatch }) {
-    await dispatch('loadContent')
+    await dispatch("loadContent");
   },
-    saveContent({commit}, payload) {
-      commit('saveContent', payload)
-      firebase.database().ref('site-content').set(payload)
-    },
-    async loadContent({commit}) {
-      //const obj = await (await firebase.database().ref('site-content').once('value')).val()
-      
-      const messageRef = this.$fire.database.ref('site-content')
-
-      const ref = (await messageRef.once('value')).val()
-      //console.log(ref)
-      commit('loadContent', ref)
-    }
+  saveContent({ commit }, payload) {
+    commit("saveContent", payload);
+    firebase
+      .database()
+      .ref("site-content")
+      .set(payload);
+  },
+  async loadContent({ commit }) {
+    const messageRef = this.$fire.database.ref("site-content");
+    const ref = (await messageRef.once("value")).val();
+    commit("loadContent", ref);
+  }
 };
 
 export const getters = {

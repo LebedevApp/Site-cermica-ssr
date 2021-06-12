@@ -14,7 +14,7 @@
       </div>
 
      
-     <AppTab :tab="tab" />
+     <app-tab :tab="tab" />
   </section>
 </template>
 

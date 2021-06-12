@@ -12,7 +12,6 @@ export const state = () => ({
     saveCard(state, payload) {
         state.block.title = payload.title
         state.block.text = payload.text
-        //console.log(payload)
     },
     saveContentBlock(state, payload) {
         state.block.title = payload.title

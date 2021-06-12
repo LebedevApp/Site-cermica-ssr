@@ -6,7 +6,9 @@
 
 <script>
 export default {
-    props: ['content']
+    name: 'article-first-img',
+    
+    props: ['content']  // должен принимать обьект
 }
 </script>
 

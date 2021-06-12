@@ -58,6 +58,8 @@
 
 <script>
 export default {
+  name: 'carousel',
+  
   data() {
     return {
       idx: 1,
@@ -96,6 +98,24 @@ export default {
       ],
     };
   },
+
+  watch: {
+    idx() {
+      if (this.idx > 3) {
+        this.idx = 0;
+      }
+    },
+  },
+
+  created() {
+    this.slide = this.sliders.find((item, i) => {
+      if (this.idx === i) {
+        return item;
+      }
+    });
+    this.setTime();
+  },
+
   methods: {
     change_slide(slide, i) {
       this.idx = i;
@@ -105,21 +125,6 @@ export default {
       setInterval(() => {
         this.idx++;
       }, this.timout);
-    },
-  },
-  created() {
-    this.slide = this.sliders.find((item, i) => {
-      if (this.idx === i) {
-        return item;
-      }
-    });
-    this.setTime();
-  },
-  watch: {
-    idx() {
-      if (this.idx > 3) {
-        this.idx = 0;
-      }
     },
   },
 };

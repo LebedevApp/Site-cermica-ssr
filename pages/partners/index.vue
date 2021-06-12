@@ -6,40 +6,38 @@
       :key="card.name"
       :src="card.img"
     >
-        <v-container>
-          <v-row justify="end" align="center" style="height: 650px">
-            <v-col class="mb-n16 mb-md-0" cols="12" md="6" sm="12" > 
-              
-            </v-col>
-            <v-col cols="12" md="6" sm="12">
-              <v-card class="mt-16">
-                <v-list-item-title
+      <v-container>
+        <v-row justify="end" align="center" style="height: 650px">
+          <v-col class="mb-n16 mb-md-0" cols="12" md="6" sm="12"> </v-col>
+          <v-col cols="12" md="6" sm="12">
+            <v-card class="mt-16">
+              <v-list-item-title
                 class="text-h4 text-md-h2 font-weight-black text-center my-3 pt-5"
                 >{{ card.title }}</v-list-item-title
               >
-                <v-card-title>
-                  {{ card.subtitle }}
-                </v-card-title>
-                <v-card-text>
-                  {{ card.text }}
-                </v-card-text>
-                <v-card-actions class="text-center">
-                  <v-btn class="ma-2" outlined color="indigo" to="/article">
-                    Подробней
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-container>
+              <v-card-title>
+                {{ card.subtitle }}
+              </v-card-title>
+              <v-card-text>
+                {{ card.text }}
+              </v-card-text>
+              <v-card-actions class="text-center">
+                <v-btn class="ma-2" outlined color="indigo" to="/article">
+                  Подробней
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-img>
   </section>
 </template>
     
-  
-
 <script>
 export default {
+  name: "partners-page",
+
   data() {
     return {
       content: [
@@ -77,6 +75,7 @@ export default {
       ],
     };
   },
+  // нужен computed который принимает data с сервера
 };
 </script>
 

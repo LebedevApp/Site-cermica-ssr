@@ -1,24 +1,31 @@
 <template>
   <section class="contact">
-    <AppArticleImg :content="img_block" />
+    <app-article-first-img :content="img_block" />
 
     <v-row justify="center" align="center">
       <v-col> <v-divider></v-divider></v-col>
       <v-col cols="8"
         ><v-container>
-          <v-list-item-content >
-              <v-list-item-title class="text-center text-subtitle-1 text-md-h4 font-weight-thin">{{img_block.title}}</v-list-item-title>
+          <v-list-item-content>
+            <v-list-item-title
+              class="text-center text-subtitle-1 text-md-h4 font-weight-thin"
+              >{{ img_block.title }}</v-list-item-title
+            >
           </v-list-item-content>
         </v-container></v-col
       >
       <v-col><v-divider></v-divider></v-col>
     </v-row>
     <v-container>
-
-    
       <v-list-item-content>
-          <v-list-item-action-text class="my-5 text-left text-subtitle-1 text-md-h6 font-weight-regular mt-8">EMAIL: {{CONTACT_INFO.email}}</v-list-item-action-text>
-          <v-list-item-action-text class="my-5 text-left text-subtitle-1 text-md-h6  mt-8">Адрес: {{CONTACT_INFO.adress}}</v-list-item-action-text>
+        <v-list-item-action-text
+          class="my-5 text-left text-subtitle-1 text-md-h6 font-weight-regular mt-8"
+          >EMAIL: {{ CONTACT_INFO.email }}</v-list-item-action-text
+        >
+        <v-list-item-action-text
+          class="my-5 text-left text-subtitle-1 text-md-h6 mt-8"
+          >Адрес: {{ CONTACT_INFO.adress }}</v-list-item-action-text
+        >
       </v-list-item-content>
       <v-row class="my-8" justify="center" align="center">
         <v-card
@@ -64,21 +71,32 @@
         </yandex-map>
       </div>
     </v-container>
+
+    <app-social-links />
   </section>
 </template>
 
 <script>
-import AppArticleImg from "../../components/article/AppArticleImg";
-import AppImg from "../../components/contentPage/AppImg";
+import AppArticleFirstImg from "@/components/contentPage/content/img-components/ArticleFirstImg";
+import AppSocialLinks from "@/components/contentPage/content/menu-components/SocialLinks";
 import { yandexMap, ymapMarker } from "vue-yandex-maps";
 
 export default {
+  name: "contact",
+
   components: {
-    AppImg,
     yandexMap,
     ymapMarker,
-    AppArticleImg
+    AppArticleFirstImg,
+    AppSocialLinks
   },
+
+  computed: {
+    CONTACT_INFO() {
+      return this.$store.getters["options/SAVE_CONTACT_INFO"];
+    },
+  },
+
   data() {
     return {
       img_block: {
@@ -90,16 +108,13 @@ export default {
       isMounted: false,
     };
   },
+
   mounted() {
     this.isMounted = true;
   },
+
   methods: {
     onClick() {},
-  },
-  computed: {
-    CONTACT_INFO() {
-      return this.$store.getters["options/SAVE_CONTACT_INFO"];
-    },
   },
 };
 </script>

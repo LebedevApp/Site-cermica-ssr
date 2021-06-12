@@ -7,20 +7,32 @@
           rounded="true"
           class="rounded-xl ma-4 transition-fast-in-fast-out"
           min-width="300"
+          max-width="350"
           :img="card.img"
+          style="position: relative"
         >
           <div class="gradient pt-16">
             <v-card-title
-              class="white--text font-weight-black text-body-1 text-sm-body-1 text-md-h6 text-lg-h4 pt-16"
+              class="
+                white--text
+                font-weight-black
+                text-body-1 text-sm-body-1 text-md-h6 text-lg-h6
+                pt-16
+              "
               >{{ card.title }}</v-card-title
             >
             <v-card-text
-              class="white--text text-caption text-sm-body-2 text-md-body-1"
+              class="
+                white--text
+                text-caption text-sm-body-2 text-md-body-1
+                mb-8
+              "
               >{{ card.text }}</v-card-text
             >
-            <div class="text-right mb-4 mr-4">
-              <v-btn rounded outlined color="white" :to="card.to">Узнать</v-btn>
-            </div>
+
+            <v-btn class="btn" rounded outlined color="white" :to="card.to"
+              >Узнать</v-btn
+            >
           </div>
         </v-card>
       </v-expand-transition>
@@ -31,12 +43,11 @@
 
 <script>
 export default {
-  props: ['cards'],
-  data() {
-    return {
-      
-    };
-  },
+  name: "cards",
+
+  parent: "advantages-component",
+
+  props: ["cards"],
 };
 </script>
 
@@ -51,5 +62,10 @@ export default {
   );
   border-bottom-left-radius: 50px;
   overflow: hidden;
+}
+.btn {
+  position: absolute;
+  bottom: 2%;
+  right: 5%;
 }
 </style>

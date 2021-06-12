@@ -42,6 +42,8 @@
 
 <script>
 export default {
+  name: 'map-content',
+  
   data() {
     return {
       content: {

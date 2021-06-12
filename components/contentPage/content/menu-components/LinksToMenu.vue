@@ -60,11 +60,14 @@
 
 <script>
 export default {
+  name: 'links',
+
   computed: {
     LINKS() {
       return this.$store.getters["options/GET_LINKS"];
     },
   },
+  
   methods: {
     closeMenu() {
       this.$emit('closeMenu')

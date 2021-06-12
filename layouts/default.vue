@@ -1,19 +1,17 @@
 <template>
   <v-app>
+    <app-headers
+      @openMenu="openMenu"
+      class="header-noscroll"
+      key="noscroll"
+    />
 
-    <AppCustomHeader @openMenu="openMenu" class="header-noscroll" key="noscroll" />
-    <!--<transition name="header" mode="out-in">
-      <AppScrollMenu v-if="scroll" />
-    </transition>-->
-
-    <transition name="header" mode="out-in">
-      <AppScrollBtn v-if="scroll" />
+    <transition name="scroll" mode="out-in">
+      <app-scroll-btn v-if="scroll" />
     </transition>
 
-    <!--<app-header @openMenu="openMenu"></app-header>-->
-
     <transition name="toggleMenu">
-      <app-new-menu v-if="menu" @close="close" />
+      <app-menu v-if="menu" @close="close" />
     </transition>
 
     <v-main>
@@ -21,36 +19,36 @@
     </v-main>
 
     <v-footer width="100%" color="#75c1ff">
-      <AppLinks />
+      <app-links />
     </v-footer>
   </v-app>
 </template>
 
 <script>
-import AppCustomHeader from "../components/CustomHeader";
-import AppScrollMenu from "../components/AppScrollMenu"
-import AppScrollBtn from "../components/AppBtnScroll"
-import appMenu from "../components/appMenu";
-import appNewMenu from "../components/NewMenu";
-import AppLinks from "../components/LnksSite";
+
+import AppHeaders from "@/components/contentPage/content/header-component/TheHeader";
+import AppScrollBtn from "@/components/UI-components/AppBtnScroll";
+import AppMenu from "@/components/contentPage/content/menu-components/TheMenu";
+import AppLinks from "@/components/contentPage/content/menu-components/LinksToMenu";
 
 export default {
+  name: 'default-layout',
+
+  components: {
+    AppMenu,
+    AppLinks,
+    AppHeaders,
+    AppScrollBtn,
+  },
+
   data() {
     return {
       menu: false,
       dialog: false,
       scroll: false,
-      
     };
   },
-  methods: {
-    openMenu() {
-      this.menu = !this.menu;
-    },
-    close() {
-      this.menu = false;
-    },
-  },
+  
   watch: {
     menu() {
       this.menu
@@ -59,6 +57,7 @@ export default {
       document.body.classList.toggle("scroll");
     },
   },
+
   mounted() {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 900) {
@@ -68,14 +67,16 @@ export default {
       }
     });
   },
-  components: {
-    appMenu,
-    appNewMenu,
-    AppLinks,
-    AppCustomHeader,
-    AppScrollMenu,
-    AppScrollBtn
+
+  methods: {
+    openMenu() {
+      this.menu = !this.menu;
+    },
+    close() {
+      this.menu = false;
+    },
   },
+  
   async fetch() {
     await this.$store.dispatch("nuxtServerInit");
   },
@@ -144,12 +145,8 @@ body {
   width: 4px;
 }
 
-.toggleMenus {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
+//------------------
+
 .toggleMenu-enter {
   opacity: 0;
 }
@@ -164,32 +161,20 @@ body {
   opacity: 0;
   transition: all 0.5s;
 }
-.fade-enter {
-  opacity: 0;
-}
-.fade-enter-to {
-  opacity: 1;
-  transition: all 0.5s;
-}
-.fade-leave {
-  opacity: 1;
-}
-.fade-leave-to {
-  opacity: 0;
-  transition: all 0.5s;
-}
+
 //----------------------------
-.header-enter {
+
+.scroll-enter {
   opacity: 0;
 }
-.header-enter-to {
+.scroll-enter-to {
   opacity: 1;
-  transition: all .5s;
+  transition: all 0.5s;
 }
-.header-leave {
+.scroll-leave {
   opacity: 1;
 }
-.header-leave-to {
+.scroll-leave-to {
   opacity: 0;
   transition: all 1s;
 }

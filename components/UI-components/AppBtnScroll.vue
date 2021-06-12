@@ -6,9 +6,12 @@
 
 <script>
 export default {
+  name: 'button-from-scroll',
+
   data() {
     return {};
   },
+  
   methods: {
     scrollTo() {
       window.scrollTo({

@@ -1,6 +1,7 @@
 <template>
   <section class="content">
-    <AppArticleImg :content="content" />
+    <app-article-first-img :content="content" />
+
     <v-row justify="center" align="center">
       <v-col> <v-divider></v-divider></v-col>
       <v-col cols="5"
@@ -12,16 +13,20 @@
       >
       <v-col><v-divider></v-divider></v-col>
     </v-row>
+
     <div style="height: 1000px"></div>
   </section>
 </template>
 
 <script>
-import AppArticleImg from "../components/article/AppArticleImg";
+import AppArticleFirstImg from "@/components/contentPage/content/img-components/ArticleFirstImg";
 export default {
+  name: 'card-three',
+
   components: {
-    AppArticleImg,
+    AppArticleFirstImg,
   },
+
   data() {
     return {
       content: {
