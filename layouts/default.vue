@@ -1,10 +1,6 @@
 <template>
   <v-app>
-    <app-headers
-      @openMenu="openMenu"
-      class="header-noscroll"
-      key="noscroll"
-    />
+    <app-headers @openMenu="openMenu" class="header-noscroll" key="noscroll" />
 
     <transition name="scroll" mode="out-in">
       <app-scroll-btn v-if="scroll" />
@@ -18,6 +14,8 @@
       <nuxt />
     </v-main>
 
+    <!--<v-btn outlined @click="saveSQL">Сохранить базу</v-btn>-->
+
     <v-footer width="100%" color="#75c1ff">
       <app-links />
     </v-footer>
@@ -25,14 +23,13 @@
 </template>
 
 <script>
-
 import AppHeaders from "@/components/contentPage/content/header-component/TheHeader";
 import AppScrollBtn from "@/components/UI-components/AppBtnScroll";
 import AppMenu from "@/components/contentPage/content/menu-components/TheMenu";
 import AppLinks from "@/components/contentPage/content/menu-components/LinksToMenu";
 
 export default {
-  name: 'default-layout',
+  name: "default-layout",
 
   components: {
     AppMenu,
@@ -48,7 +45,13 @@ export default {
       scroll: false,
     };
   },
-  
+
+  computed: {
+    CONTENT_SITE() {
+      return this.$store.getters['options/GET_CONTENT_ALL']
+    }
+  },
+
   watch: {
     menu() {
       this.menu
@@ -75,8 +78,12 @@ export default {
     close() {
       this.menu = false;
     },
+    saveSQL() {
+      //console.log(this.CONTENT_SITE)
+      this.$store.dispatch('crm/LOAD_CONTENT')
+    },
   },
-  
+
   async fetch() {
     await this.$store.dispatch("nuxtServerInit");
   },

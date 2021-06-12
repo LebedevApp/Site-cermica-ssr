@@ -20,6 +20,7 @@
 
 <script>
 import AppTab from "../../contentPage/tabs/Tab";
+
 export default {
   props: ["tabs"],
   components: {

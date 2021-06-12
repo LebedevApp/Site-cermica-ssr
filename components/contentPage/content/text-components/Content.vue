@@ -49,7 +49,7 @@ export default {
       type: Object,
       require: true,
       default: {
-        img: "pexels-pixabay-326410-min.jpg",
+        img: "img/error/error.img",
         title: "No text",
         text: "No text",
         subtext: "No text",
