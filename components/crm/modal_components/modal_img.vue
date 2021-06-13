@@ -6,7 +6,7 @@
         outlined
         clearable
         :value="CONTENT.TITLE"
-        @change="saveTitle($event)"
+        @input="saveTitle($event)"
         ref="inputTitle"
       ></v-text-field>
       <v-divider></v-divider>
@@ -16,7 +16,7 @@
         clear-icon="mdi-close-circle"
         label="Описание"
         :value="CONTENT.TEXT"
-        @change="saveText($event)"
+        @input="saveText($event)"
         ref="inputText"
       ></v-textarea>
 

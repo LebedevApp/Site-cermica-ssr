@@ -7,7 +7,7 @@
         clear-icon="mdi-close-circle"
         label="Описание"
         :value="CONTENT.DESCRIPTION"
-        @change="saveText($event)"
+        @input="saveText($event)"
         ref="inputText"
       ></v-textarea>
 
