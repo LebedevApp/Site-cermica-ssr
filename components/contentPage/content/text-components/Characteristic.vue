@@ -9,12 +9,12 @@
         align="center"
         
       >
-        <v-col cols="12" md="6" v-for="cols in content"
-        :key="cols.text">
+        <v-col cols="12" md="6" v-for="(CARD,idx) in CONTENT"
+        :key="idx">
           <v-list-item-content>
-            <v-list-item-title class="ml-2 text-body-1 text-lg-h5 font-weight-light text-center text-md-left">{{ cols.title }}</v-list-item-title>
+            <v-list-item-title class="ml-2 text-body-1 text-lg-h5 font-weight-light text-center text-md-left">{{ CARD.TITLE }}</v-list-item-title>
             <v-divider class="my-4"></v-divider>
-            <v-list-item-action-text class="my-1 my-md-3 font-weight-light text-caption text-sm-body-2 text-md-body-2 text-xl-h6 text-center text-md-left">{{ cols.text }}</v-list-item-action-text>
+            <v-list-item-action-text class="my-1 my-md-3 font-weight-light text-caption text-sm-body-2 text-md-body-2 text-xl-h6 text-center text-md-left">{{ CARD.TEXT }}</v-list-item-action-text>
           </v-list-item-content>
         </v-col>
       </v-row>
@@ -26,6 +26,6 @@
 export default {
   name: 'characteristic',
 
-  props: ["content"],
+  props: ["CONTENT"],
 };
 </script>

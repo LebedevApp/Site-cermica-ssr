@@ -16,8 +16,11 @@ export const mutations = {
   //==========================
   SAVE_CONTENT(state, payload) {
     state.CONTENT = payload
+  },
+  ADD_ON_DATABASE(state, payload) {
     //console.log(state.CONTENT)
   }
+  
 };
 
 // Нужен обработчик ошибок try catch
@@ -37,6 +40,8 @@ export const actions = {
     const ref = (await messageRef.once("value")).val();
     commit("loadContent", ref);
   },
+
+
   //=================
 
   SAVE_IN_DATABASE({ commit, dispatch }, payload) {
@@ -44,12 +49,19 @@ export const actions = {
       .database()
       .ref("CONTENT_IS_THIS_SITE")
       .set(payload);
-    //dispatch('LOAD_CONTENT')
   },
   async LOAD_CONTENT({ commit }) {
     const messageRef = this.$fire.database.ref("CONTENT_IS_THIS_SITE");
     const res = (await messageRef.once("value")).val();
     commit('SAVE_CONTENT',res)
+  },
+  async ADD_ON_DATABASE({state}) {
+    //console.log(state.CONTENT)
+    await firebase
+      .database()
+      .ref("CONTENT_IS_THIS_SITE")
+      .set(state.CONTENT);
+    //commit('ADD_ON_DATABASE')
   }
 };
 

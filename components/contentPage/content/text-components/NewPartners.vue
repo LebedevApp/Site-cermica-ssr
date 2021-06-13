@@ -19,15 +19,15 @@
                 >
                   <v-list-item-title
                     class="text-md-left text-body-1 text-md-h5 font-weight-light"
-                    >{{ content.title }}</v-list-item-title
+                    >{{ CONTENT.TITLE }}</v-list-item-title
                   >
                   <v-list-item-content>
                     <v-list-item-action-text
                       class="text-md-left body-2 text-md-body-2 font-weight-light px-1"
-                      >{{ content.text }}</v-list-item-action-text
+                      >{{ CONTENT.TEXT }}</v-list-item-action-text
                     >
                   </v-list-item-content>
-                  <v-btn class="ma-2" outlined color="blue darken-1" :to="content.to">
+                  <v-btn class="ma-2" outlined color="blue darken-1" :to="CONTENT.TO">
                     Подробней
                   </v-btn>
                 </v-card>
@@ -43,6 +43,8 @@
 <script>
 export default {
   name: 'map-content',
+
+  props: ['CONTENT'],
   
   data() {
     return {

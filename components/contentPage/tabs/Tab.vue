@@ -1,21 +1,21 @@
 <template>
   <div class="tab">
-    <v-img class="tab_img gradient" :src="tab.img">
+    <v-img class="tab_img gradient" :src="tab.IMG">
       <div class="gradient d-flex justify-start align-start">
         <v-container>
           <div class="tab_block">
               <v-list-item-content class="text-button font-weight-bold white--text">
-                  {{tab.title}}
+                  {{tab.EXTRA_TITLE}}
               </v-list-item-content>
             <v-list-item-content
               
               >
-              <v-list-item-action class="white--text ml-2 my-4 text-body-1 text-lg-h5 font-weight-light text-center text-md-left"> {{ tab.subtitle }}</v-list-item-action>
+              <v-list-item-action class="white--text ml-2 my-4 text-body-1 text-lg-h5 font-weight-light text-center text-md-left"> {{ tab.TITLE }}</v-list-item-action>
               </v-list-item-content
             >
             <v-list-item-action-text
               class="white--text my-4 my-md-3 font-weight-light text-caption text-sm-body-2 text-md-body-2 text-xl-h6 text-center text-md-left"
-              >{{ tab.text }}</v-list-item-action-text
+              >{{ tab.TEXT }}</v-list-item-action-text
             >
           </div>
         </v-container>

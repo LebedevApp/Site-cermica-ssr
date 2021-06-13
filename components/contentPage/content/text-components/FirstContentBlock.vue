@@ -7,14 +7,14 @@
           <v-list-item-content
             class="text-center text-subtitle-1 text-md-h4 font-weight-thin"
           >
-            {{ page_block_content.description }}
+            {{ DESCRIPTION }}
           </v-list-item-content>
         </v-container></v-col
       >
       <v-col><v-divider></v-divider></v-col>
     </v-row>
 
-    <app-content :content="page_block_content" />
+    <app-content :CONTENT="CONTENT" />
   </section>
 </template>
 
@@ -23,6 +23,8 @@ import AppContent from "@/components/contentPage/content/text-components/Content
 
 export default {
   name: 'first-content-block',
+
+  props: ['CONTENT' , 'DESCRIPTION'],
   
   components: { AppContent },
   

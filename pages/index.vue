@@ -4,11 +4,16 @@
 
     <app-advantages :page_cards="page_cards.cards" />
 
-    <app-content :content="page_block_one" />
+    <!--<app-content :CONTENT="CONTENT_PAGE.CONTENT.CONTENT_BLOCK" />-->
+
+    <AppOContent :content='page_block_one' />
+
 
     <app-partners :content="page_block_partners" />
 
-    <app-content class="mt-5" :content="page_block_two" />
+    <!--<app-content class="mt-5" :content="page_block_two" />-->
+
+    <AppOContent :content='page_block_two' />
 
     <app-multiple-caorusel :page_articles="page_articles" />
 
@@ -20,6 +25,7 @@
 import AppCarousel from "@/components/contentPage/content/carousel/Carousel";
 import AppAdvantages from "@/components/contentPage/content/cards-components/Advantages";
 import AppContent from "@/components/contentPage/content/text-components/Content";
+import AppOContent from "./../components/contentPage/content/text-components/OldCcontent.vue";
 import AppPartners from "@/components/contentPage/content/text-components/Partners";
 import AppMultipleCaorusel from "@/components/contentPage/content/carousel/MultipleCaorusel";
 import AppSocialLinks from "@/components/contentPage/content/menu-components/SocialLinks";
@@ -33,11 +39,18 @@ export default {
     AppPartners,
     AppMultipleCaorusel,
     AppCarousel,
-    AppSocialLinks
+    AppSocialLinks,
+    AppOContent
   },
 
   // в поле computed стоит использовать ...mapGetters()
   computed: {
+    GET_CONTENT() {
+      return this.$store.getters["crm/GET_CONTENT"];
+    },
+    CONTENT_PAGE() {
+      return this.GET_CONTENT.MAIN_PAGE;
+    },
     site_content() {
       return this.$store.getters["crm/getContent"];
     },
@@ -82,6 +95,9 @@ export default {
     slide(payload) {
       console.log(payload);
     },
+    bbb() {
+      console.log(this.page_block_one)
+    }
   },
 };
 </script>

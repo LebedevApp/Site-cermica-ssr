@@ -1,23 +1,25 @@
 <template>
   <section>
     <v-container>
+      <h1 class="my-8 text-center">Керамические мембраны</h1>
+      
       <app-first-img-edit :CONTENT="CONTENT_PAGE" />
 
-      <app-description-edit :DESCRIPTION="CONTENT_PAGE.DESCRIPTION" />
+      <app-description-edit :CONTENT="CONTENT_PAGE" />
 
       <app-block-with-edit
-        :CONTENT="CONTENT_PAGE.CONTENT.CONTENT_BLOCK"
+        :CONTENT="CONTENT_PAGE"
       />
 
       <app-our-service-edit
-        :CONTENT="CONTENT_PAGE.CONTENT.OUR_SERVICE"
+        :CONTENT="CONTENT_PAGE"
       />
 
       <app-characteristic-edit
-        :CONTENT="CONTENT_PAGE.CONTENT.CHARACTERISTIC"
+        :CONTENT="CONTENT_PAGE"
       />
 
-      <app-tabs-edit :CONTENT="CONTENT_PAGE.CONTENT.TAB" />
+      <app-tabs-edit :CONTENT="CONTENT_PAGE" />
     </v-container>
   </section>
 </template>

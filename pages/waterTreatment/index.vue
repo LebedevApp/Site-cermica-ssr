@@ -1,19 +1,19 @@
 <template>
   <main>
-    <app-first-img :page="img_block" />
+    <app-first-img :CONTENT="CONTENT_PAGE" />
 
-    <app-first-content-block />
+    <app-first-content-block :CONTENT="CONTENT_PAGE.CONTENT.CONTENT_BLOCK" :DESCRIPTION="CONTENT_PAGE.DESCRIPTION"/>
 
-    <app-new-partners />
+    <app-new-partners :CONTENT="CONTENT_PAGE.CONTENT.PARTNERS_BLOCK" />
 
-    <app-characteristic :content="characteristic" />
+    <app-characteristic :CONTENT="CONTENT_PAGE.CONTENT.CHARACTERISTIC" />
 
-    <app-tabs-wrapper :tabs="tabs" />
+    <app-tabs-wrapper :CONTENT="CONTENT_PAGE.CONTENT.TAB" />
 
     <app-time-line />
 
     <app-multiple-caorusel :page_articles="page_articles" />
-
+ 
     <app-social-links />
   </main>
 </template>
@@ -43,6 +43,16 @@ export default {
   },
 
   computed: {
+    GET_CONTENT() {
+      return this.$store.getters["crm/GET_CONTENT"];
+    },
+    CONTENT_PAGE() {
+      return this.GET_CONTENT.WATER_TREATMENT_PAGE;
+    },
+
+
+
+    //==============================
     site_content() {
       return this.$store.getters["crm/getContent"];
     },

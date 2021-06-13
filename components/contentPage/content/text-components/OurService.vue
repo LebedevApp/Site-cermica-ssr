@@ -2,18 +2,18 @@
   <section class="channelbox section">
     <v-container class="py-8">
       <v-list-item-title class="text-button font-weight-bold grey--text">{{
-        content.extra_title
+        CONTENT.EXTRA_TITLE
       }}</v-list-item-title>
       <v-row align="center">
         <v-col cols="12" lg="7" md="7" sm="12">
           <v-list-item-content>
             <v-list-item-title
               class="ml-2 text-body-1 text-lg-h5 font-weight-light text-center text-md-left"
-              >{{ content.title }}</v-list-item-title
+              >{{ CONTENT.TITLE }}</v-list-item-title
             >
             <v-list-item-action-text
               class="my-1 my-md-3 font-weight-light text-caption text-sm-body-2 text-md-body-2 text-xl-h6 text-center text-md-left"
-              >{{ content.text }}</v-list-item-action-text
+              >{{ CONTENT.TEXT }}</v-list-item-action-text
             >
             
           </v-list-item-content>
@@ -35,6 +35,8 @@
 <script>
 export default {
   name: 'our-sevice',
+
+  props: ['CONTENT'],
   
   data() {
     return {

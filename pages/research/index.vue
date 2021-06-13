@@ -1,12 +1,12 @@
 <template>
   <main>
-    <app-first-img :page="img_block" />
+    <app-first-img :CONTENT="CONTENT_PAGE" />
 
-    <app-first-content-block />
+    <app-first-content-block :CONTENT="CONTENT_PAGE.CONTENT.CONTENT_BLOCK" :DESCRIPTION="CONTENT_PAGE.DESCRIPTION" />
 
-    <app-our-service />
+    <app-our-service :CONTENT="CONTENT_PAGE.CONTENT.OUR_SERVICE" />
 
-    <app-tabs-wrapper :tabs="tabs" />
+    <app-tabs-wrapper :CONTENT="CONTENT_PAGE.CONTENT.TAB" />
 
     <app-time-line />
 
@@ -39,6 +39,17 @@ export default {
   },
 
   computed: {
+    GET_CONTENT() {
+      return this.$store.getters["crm/GET_CONTENT"];
+    },
+    CONTENT_PAGE() {
+      return this.GET_CONTENT.RESEARCH_PAGE;
+    },
+
+
+
+
+    //===================
     site_content() {
       return this.$store.getters["crm/getContent"];
     },
