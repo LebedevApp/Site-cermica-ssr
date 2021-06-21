@@ -12,9 +12,9 @@
                 class="ml-2 text-body-1 text-lg-h4 font-weight-bold text-center text-md-left"
                 >{{ CONTENT.TITLE }}</v-list-item-title
               >
-              <v-list-item-action-text
-                class="my-1 my-md-3 font-weight-light text-caption text-sm-body-2 text-md-body-2 text-xl-h6 text-center text-md-left"
-                >{{ CONTENT.TEXT }}</v-list-item-action-text
+              <p
+                class="ctx my-1 my-md-3 font-weight-light text-caption text-sm-body-2 text-md-body-2 text-xl-h6 text-center text-md-left"
+                >{{ CONTENT.TEXT }}</p
               >
               <v-list-item-action-text
                 class="my-1 my-md-3 font-weight-regular text-caption text-center text-md-left"
@@ -66,5 +66,8 @@ export default {
 <style lang="scss" scoped>
 .img {
   width: 100%;
+}
+.ctx {
+  white-space: pre-wrap;
 }
 </style>
