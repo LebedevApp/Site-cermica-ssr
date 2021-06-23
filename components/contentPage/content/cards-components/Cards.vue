@@ -16,7 +16,7 @@
               class="
                 white--text
                 font-weight-black
-                text-body-1 text-sm-body-1 text-md-h6 text-lg-h6
+                text-body-1 text-sm-body-1 text-md-body-1 text-lg-h6
                 pt-16
               "
               >{{ card.title }}</v-card-title

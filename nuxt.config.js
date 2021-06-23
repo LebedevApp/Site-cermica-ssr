@@ -25,7 +25,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/firebase.js",{ src: '~/plugins/ymapPlugin.js',  mode: 'client' }],
+  plugins: ["~/plugins/firebase.js",{ src: '~/plugins/ymapPlugin.js',  mode: 'client' },{src: '~/plugins/vuelidate'}],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -59,6 +59,15 @@ export default {
     },
     services: {
       database: true,
+      auth: {
+        
+        initialize: {
+          //onAuthStateChangedMutation: 'ON_AUTH_STATE_CHANGED_MUTATION',
+          onAuthStateChangedAction: 'onAuthStateChangedAction',
+          subscribeManually: false
+        },
+        
+      },
     },
   },
 

@@ -2,6 +2,32 @@
   <v-app>
     <app-headers @openMenu="openMenu" class="header-noscroll" key="noscroll" />
 
+    <v-card v-if="isUserLogginIn" class="menu_crm" elevation="15" width="150">
+      <v-card-actions>
+        <v-row justify="center" align="center">
+          <p class="mt-4 mr-3 font-weight-regular text-body-1">CRM</p>
+          <div>
+            <v-btn class="mx-1" x-small outlined fab color="indigo" to="/login">
+              <v-icon>mdi-pencil</v-icon>
+            </v-btn>
+          </div>
+          <div>
+            <v-btn
+              class="mx-1"
+              x-small
+              outlined
+              fab
+              color="indigo"
+              :loading="loading"
+              @click="logout"
+            >
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
+          </div>
+        </v-row>
+      </v-card-actions>
+    </v-card>
+
     <transition name="scroll" mode="out-in">
       <app-scroll-btn v-if="scroll" />
     </transition>
@@ -48,8 +74,14 @@ export default {
 
   computed: {
     CONTENT_SITE() {
-      return this.$store.getters['options/GET_CONTENT_ALL']
-    }
+      return this.$store.getters["options/GET_CONTENT_ALL"];
+    },
+    isUserLogginIn() {
+      return this.$store.getters["user/IS_USER_LIGGIN_IN"];
+    },
+    loading() {
+      return this.$store.getters["user/GET_LOADING"];
+    },
   },
 
   watch: {
@@ -80,7 +112,13 @@ export default {
     },
     saveSQL() {
       //console.log(this.CONTENT_SITE)
-      this.$store.dispatch('crm/LOAD_CONTENT')
+      this.$store.dispatch("crm/LOAD_CONTENT");
+    },
+    logout() {
+      this.$store
+        .dispatch("user/LOGOUT")
+        .then(() => {})
+        .catch(() => {});
     },
   },
 
@@ -92,6 +130,7 @@ export default {
 
 <style lang="scss">
 body {
+  position: relative;
   overflow-x: hidden;
   top: 0;
   width: 100%;
@@ -184,5 +223,12 @@ body {
 .scroll-leave-to {
   opacity: 0;
   transition: all 1s;
+}
+//-------------
+.menu_crm {
+  position: absolute;
+  top: 3%;
+  left: 2%;
+  z-index: 50;
 }
 </style>
