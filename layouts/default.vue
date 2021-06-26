@@ -2,31 +2,40 @@
   <v-app>
     <app-headers @openMenu="openMenu" class="header-noscroll" key="noscroll" />
 
-    <v-card v-if="isUserLogginIn" class="menu_crm" elevation="15" width="150">
-      <v-card-actions>
-        <v-row justify="center" align="center">
-          <p class="mt-4 mr-3 font-weight-regular text-body-1">CRM</p>
-          <div>
-            <v-btn class="mx-1" x-small outlined fab color="indigo" to="/login">
-              <v-icon>mdi-pencil</v-icon>
-            </v-btn>
-          </div>
-          <div>
-            <v-btn
-              class="mx-1"
-              x-small
-              outlined
-              fab
-              color="indigo"
-              :loading="loading"
-              @click="logout"
-            >
-              <v-icon>mdi-close</v-icon>
-            </v-btn>
-          </div>
-        </v-row>
-      </v-card-actions>
-    </v-card>
+    <no-ssr>
+      <v-card v-if="isUserLogginIn" class="menu_crm" elevation="15" width="150">
+        <v-card-actions>
+          <v-row justify="center" align="center">
+            <p class="mt-4 mr-3 font-weight-regular text-body-1">CRM</p>
+            <div>
+              <v-btn
+                class="mx-1"
+                x-small
+                outlined
+                fab
+                color="indigo"
+                to="/login"
+              >
+                <v-icon>mdi-pencil</v-icon>
+              </v-btn>
+            </div>
+            <div>
+              <v-btn
+                class="mx-1"
+                x-small
+                outlined
+                fab
+                color="indigo"
+                :loading="loading"
+                @click="logout"
+              >
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+            </div>
+          </v-row>
+        </v-card-actions>
+      </v-card>
+    </no-ssr>
 
     <transition name="scroll" mode="out-in">
       <app-scroll-btn v-if="scroll" />
@@ -69,6 +78,7 @@ export default {
       menu: false,
       dialog: false,
       scroll: false,
+      isUser: null,
     };
   },
 
@@ -84,14 +94,14 @@ export default {
     },
   },
 
-  watch: {
+  /* watch: {
     menu() {
       this.menu
         ? (document.body.style.position = "fixed")
         : (document.body.style.position = "relative");
       document.body.classList.toggle("scroll");
     },
-  },
+  },*/
 
   mounted() {
     window.addEventListener("scroll", () => {

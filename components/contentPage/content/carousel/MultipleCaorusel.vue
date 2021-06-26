@@ -9,7 +9,7 @@
           >
           <div>
             <VueSlickCarousel v-bind="settings" ref="carousel">
-              <div v-for="card in page_articles.cards" :key="card.id">
+              <div v-for="card in page_articles.cards" :key="card.title">
                 <v-card class="ma-3" min-width="250" max-width="350">
                   <v-img class="img" :src="card.img" alt=""> </v-img>
                   <v-card-text style="position: relative">

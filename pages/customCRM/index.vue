@@ -31,7 +31,7 @@
         <v-col>
           <div class="text-center text-md-left">
             <v-btn outlined class="font-weight-light"
-              ><v-icon>mdi-github</v-icon>Github</v-btn
+              ><v-icon class="mr-3">mdi-github</v-icon>Github</v-btn
             >
           </div>
         </v-col>

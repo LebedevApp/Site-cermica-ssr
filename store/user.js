@@ -17,7 +17,6 @@ export const state = () => ({
 export const mutations = {
   SET_USER(state, payload) {
     state.user = payload;
-    //console.log(state.user !== null)
   },
   SET_LOADING(state, payload) {
     state.loading = payload;
@@ -39,7 +38,6 @@ export const actions = {
         commit('SET_USER', new User(user.user.uid))
         commit('SET_LOADING', false)
     } catch (err) {
-        console.log(err)
         commit('SET_LOADING', false)
         commit('SET_ERRORS', err.message)
         throw err
@@ -53,7 +51,6 @@ export const actions = {
         commit('SET_USER', null)
         commit('SET_LOADING', false)
     } catch (e) {
-        console.log(err)
         commit('SET_LOADING', false)
         commit('SET_ERRORS', err.message)
         throw err
@@ -65,7 +62,10 @@ export const getters = {
     GET_LOADING(state) {
         return state.loading
     },
+    GET_ERRORS(state) {
+      return state.errors
+    },
     IS_USER_LIGGIN_IN(state) {
         return state.user !== null
-    }
+    },
 };

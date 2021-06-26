@@ -4,7 +4,7 @@
       <v-container>
       <v-list-item-title class="text-button font-weight-bold grey--text">Наши события</v-list-item-title>
         <VueSlickCarousel v-bind="settings" ref="carousel">
-          <div v-for="card in cards" :key="card.id">
+          <div v-for="(card, i) in cards" :key="i">
             <v-card class="ma-3" min-width="250" max-width="350" flat>
               <v-card-title
                 class="subtitle text-body-2 text-md-h6 text-center text-md-left"
