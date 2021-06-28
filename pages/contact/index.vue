@@ -1,16 +1,15 @@
 <template>
   <section class="contact">
-    <app-article-first-img :content="img_block" />
+    <app-article-first-img :content="content" />
 
     <v-row justify="center" align="center">
       <v-col> <v-divider></v-divider></v-col>
       <v-col cols="8"
         ><v-container>
           <v-list-item-content>
-            <v-list-item-title
-              class="text-center text-subtitle-1 text-md-h4 font-weight-thin"
-              >{{ img_block.title }}</v-list-item-title
-            >
+            <p class="text-center text-subtitle-1 text-md-h4 font-weight-thin">
+              {{ content.title }}
+            </p>
           </v-list-item-content>
         </v-container></v-col
       >
@@ -19,12 +18,17 @@
     <v-container>
       <v-list-item-content>
         <v-list-item-action-text
-          class="my-5 text-left text-subtitle-1 text-md-h6 font-weight-regular mt-8"
-          >EMAIL: {{ CONTACT_INFO.email }}</v-list-item-action-text
+          class="
+            my-5
+            text-left text-subtitle-1 text-md-h6
+            font-weight-regular
+            mt-8
+          "
+          >EMAIL: {{ content.email }}</v-list-item-action-text
         >
         <v-list-item-action-text
           class="my-5 text-left text-subtitle-1 text-md-h6 mt-8"
-          >Адрес: {{ CONTACT_INFO.adress }}</v-list-item-action-text
+          >Адрес: {{ content.adress }}</v-list-item-action-text
         >
       </v-list-item-content>
       <v-row class="my-8" justify="center" align="center">
@@ -32,7 +36,7 @@
           class="ma-3 py-5"
           min-width="300"
           max-width="300"
-          v-for="people in CONTACT_INFO.tel"
+          v-for="people in content.tel"
           :key="people.name"
         >
           <v-list-item>
@@ -60,13 +64,13 @@
 
     <v-container class="my-5">
       <div v-if="isMounted">
-        <yandex-map :coords="CONTACT_INFO.coords" :zoom="15" class="map">
+        <yandex-map :coords="content.coords" :zoom="15" class="map">
           <ymap-marker
             markerId="123"
             marker-type="placemark"
-            :hint-content="CONTACT_INFO.adress"
+            :hint-content="content.adress"
             balloon-content="Ceramic"
-            :coords="CONTACT_INFO.coords"
+            :coords="content.coords"
           ></ymap-marker>
         </yandex-map>
       </div>
@@ -88,33 +92,23 @@ export default {
     yandexMap,
     ymapMarker,
     AppArticleFirstImg,
-    AppSocialLinks
+    AppSocialLinks,
   },
 
   computed: {
-    CONTACT_INFO() {
-      return this.$store.getters["options/SAVE_CONTACT_INFO"];
+    content() {
+      return this.$store.getters["GET_CONTACT_INFO"];
     },
-  },
-
-  data() {
-    return {
-      img_block: {
-        img: "pexels-pixabay-221047-min.jpg",
-        name: "contact",
-        title: "Контактная информация компании",
-        //text: 'Контактная информация компании'
-      },
-      isMounted: false,
-    };
   },
 
   mounted() {
     this.isMounted = true;
   },
 
-  methods: {
-    onClick() {},
+  data() {
+    return {
+      isMounted: false,
+    };
   },
 };
 </script>

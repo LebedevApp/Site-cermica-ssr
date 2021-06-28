@@ -5,16 +5,16 @@
       <v-col><v-divider></v-divider></v-col>
       <v-col cols="8"
         ><v-container>
-          <v-list-item-content class="text-center text-subtitle-1 text-md-h4 font-weight-thin">
-            Our new Ultium Platform will help put everyone in an EV, moving us closer to a world with zero emissions.
-          </v-list-item-content>
+          <p class="text-center text-subtitle-1 text-md-h4 font-weight-thin">
+            {{description.description}}
+          </p>
         </v-container></v-col
       >
       <v-col><v-divider></v-divider></v-col>
     </v-row>
 
     <v-container>
-      <app-cards :cards='page_cards' />
+      <app-cards :cards='cards' />
     </v-container>
     
   </div>
@@ -28,11 +28,22 @@ import AppCards from '@/components/contentPage/content/cards-components/Cards'
 export default {
   name: "advantages-components",
 
+  props: {
+    cards: {
+      type: Array,
+      require: true
+    },
+    description: {
+      type: Object,
+      require: true
+    }
+  },
+
   components: {
       AppCards
   },
 
-  props: ['page_cards'],
+  
   
 };
 </script>

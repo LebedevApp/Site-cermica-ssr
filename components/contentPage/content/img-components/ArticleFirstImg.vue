@@ -8,7 +8,12 @@
 export default {
     name: 'article-first-img',
     
-    props: ['content']  // должен принимать обьект
+    props: {
+        content: {
+            type: Object,
+            require: true
+        }
+    }
 }
 </script>
 
@@ -17,6 +22,7 @@ export default {
     width: 100%;
     height: 350px;
     object-fit: cover;
+    
 }
 .gradient {
     width: 100%;

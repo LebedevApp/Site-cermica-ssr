@@ -10,7 +10,7 @@
         <v-divider class="my-3"></v-divider>
         <v-list-item
           link
-          v-for="service in LINKS.SERVICE"
+          v-for="service in links.service"
           :key="service.title"
           :to="service.to"
           class="link secondary--text font-weight-ligh"
@@ -28,7 +28,7 @@
         <v-divider class="my-3"></v-divider>
         <v-list-item
           link
-          v-for="documentation in LINKS.DOCUMENTATIONS"
+          v-for="documentation in links.documentation"
           :key="documentation.title"
           :to="documentation.to"
           class="link secondary--text font-weight-ligh"
@@ -45,7 +45,7 @@
         <v-divider class="my-3"></v-divider>
         <v-list-item
           link
-          v-for="contact in LINKS.CONTACT"
+          v-for="contact in links.contact"
           :key="contact.title"
           :to="contact.to"
           class="link secondary--text font-weight-ligh"
@@ -63,8 +63,8 @@ export default {
   name: 'links',
 
   computed: {
-    LINKS() {
-      return this.$store.getters["options/GET_LINKS"];
+    links() {
+      return this.$store.getters["GET_LINKS"];
     },
   },
   

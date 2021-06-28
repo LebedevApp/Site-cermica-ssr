@@ -34,10 +34,6 @@ export default {
 
   components: { AppLinks },
 
-  data() {
-    return {};
-  },
-
   methods: {
     close() {
       this.$emit("close");

@@ -4,11 +4,11 @@
       <v-container>
       <v-list-item-title class="text-button font-weight-bold grey--text">Наши события</v-list-item-title>
         <VueSlickCarousel v-bind="settings" ref="carousel">
-          <div v-for="(card, i) in cards" :key="i">
+          <div v-for="(card, i) in content" :key="i">
             <v-card class="ma-3" min-width="250" max-width="350" flat>
               <v-card-title
                 class="subtitle text-body-2 text-md-h6 text-center text-md-left"
-                >{{ card.subtitle }}  <v-divider class="mx-8"></v-divider></v-card-title
+                >{{ card.date }}  <v-divider class="mx-8"></v-divider></v-card-title
               >
               <v-img class="img" :src="card.img" alt=""> </v-img>
               <v-card-text>
@@ -16,7 +16,7 @@
                   class="text-body-2 text-md-h6 text-center text-md-left"
                   >{{ card.title }}</v-card-title
                 >
-                <v-card-subtitle>{{ card.text }}</v-card-subtitle>
+                <v-card-subtitle>{{ card.description }}</v-card-subtitle>
               </v-card-text>
              
             </v-card>
@@ -40,6 +40,13 @@ import VueSlickCarousel from "vue-slick-carousel";
 
 export default {
   name: 'time-line',
+
+  props: {
+    content: {
+      type: Array,
+      require: true
+    }
+  },
 
   components: {
     VueSlickCarousel,

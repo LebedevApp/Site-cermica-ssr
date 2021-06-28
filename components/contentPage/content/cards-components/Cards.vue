@@ -27,7 +27,7 @@
                 text-caption text-sm-body-2 text-md-body-1
                 mb-8
               "
-              >{{ card.text }}</v-card-text
+              >{{ card.description }}</v-card-text
             >
 
             <v-btn class="btn" rounded outlined color="white" :to="card.to"
@@ -48,6 +48,8 @@ export default {
   parent: "advantages-component",
 
   props: ["cards"],
+
+
 };
 </script>
 

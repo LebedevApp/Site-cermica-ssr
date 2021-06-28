@@ -50,7 +50,7 @@
                   </template>
                   <v-list>
                     <v-list-item
-                      v-for="contact in CONTACT_INFO.tel"
+                      v-for="contact in contact_info.tel"
                       :key="contact.tel"
                     >
                       <v-list-item-content>
@@ -162,8 +162,8 @@ export default {
   },
 
   computed: {
-    CONTACT_INFO() {
-      return this.$store.getters["options/SAVE_CONTACT_INFO"];
+    contact_info() {
+      return this.$store.getters["GET_CONTACT_INFO"];
     },
   },
 

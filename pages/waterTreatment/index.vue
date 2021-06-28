@@ -1,19 +1,22 @@
 <template>
   <main>
-    <app-first-img :CONTENT="CONTENT_PAGE" />
+    <app-first-img :content="content.content" />
 
-    <app-first-content-block :CONTENT="CONTENT_PAGE.CONTENT.CONTENT_BLOCK" :DESCRIPTION="CONTENT_PAGE.DESCRIPTION"/>
+    <app-first-content-block
+      :content="content.content_block"
+      :description="content.content"
+    />
 
-    <app-new-partners :CONTENT="CONTENT_PAGE.CONTENT.PARTNERS_BLOCK" />
+    <app-new-partners :content="content.partners_block" />
 
-    <app-characteristic :CONTENT="CONTENT_PAGE.CONTENT.CHARACTERISTIC" />
+    <app-characteristic :content="content.characteristic" />
 
-    <app-tabs-wrapper :CONTENT="CONTENT_PAGE.CONTENT.TAB" />
+    <app-tabs-wrapper :content="content.tab" />
 
-    <app-time-line />
+    <app-time-line :content="time_line" />
 
-    <app-multiple-caorusel :page_articles="page_articles" />
- 
+    <app-multiple-caorusel :cards="article" />
+
     <app-social-links />
   </main>
 </template>
@@ -29,7 +32,7 @@ import AppMultipleCaorusel from "@/components/contentPage/content/carousel/Multi
 import AppSocialLinks from "@/components/contentPage/content/menu-components/SocialLinks";
 
 export default {
-  name: 'water-treatment-page',
+  name: "water-treatment-page",
 
   components: {
     AppFirstImg,
@@ -39,93 +42,19 @@ export default {
     AppCharacteristic,
     AppNewPartners,
     AppMultipleCaorusel,
-    AppSocialLinks
+    AppSocialLinks,
   },
 
   computed: {
-    GET_CONTENT() {
-      return this.$store.getters["crm/GET_CONTENT"];
+    content() {
+      return this.$store.getters["GET_WATER_TREATMENT_PAGE"];
     },
-    CONTENT_PAGE() {
-      return this.GET_CONTENT.WATER_TREATMENT_PAGE;
+    article() {
+      return this.$store.getters["GET_MULTIPLE"];
     },
-
-
-
-    //==============================
-    site_content() {
-      return this.$store.getters["crm/getContent"];
-    },
-    page() {
-      return this.site_content.find((key) => {
-        return key.name === "Home";
-      });
-    },
-    page_articles() {
-      return this.page.content.find((key) => {
-        return key.blockName === "Блок-слайдер со статьями";
-      });
-    },
-    page_block_partners() {
-      return this.page.content.find((key) => {
-        return key.blockName === "Блок с картой (партнерский)";
-      });
+    time_line() {
+      return this.$store.getters["GET_TIME_LINE"];
     },
   },
-
-  data() {
-    return {
-      img_block: {
-        name: "waterTreatment",
-        img: "img/_DSC9903-min.jpg",
-        title: "Современные технологии водоподготовки",
-        text:
-          "Проектирование и производство стационарных и мобильных установок водоподготовки на основе технологии озоноультрафильтрации с применением  мембранных фильтроэлементов.",
-      },
-      tabs: [
-        {
-          img: "img/pexels-marian.jpg",
-          video: "",
-          name: "Название кнопки 1",
-          title: "Наше производство сегодня",
-          subtitle: "Возможно недавнее нововведение в производстве",
-          text:
-            "Meet the Cruise Origin. You wont see a steering wheel, rearview mirror or pedals, but you will see something entirely new—a vehicle with an experience purely designed around the riders. And one that will be built at one of GM’s most advanced assembly plants in North America, Factory ZERO. Factory ZERO will become the first U.S. automotive plant to install Verizon’s 5G Ultra-Wideband technology. Key benefits of 5G in a manufacturing plant include reliability, speed and sheer scale.",
-        },
-        {
-          img: "img/pexels-albin-berlin-906982-min.jpg",
-          name: "Название кнопки 2",
-          title: "Наше производство сегодня",
-          subtitle: "Возможно недавнее достижение",
-          text:
-            "Meet the Cruise AV. Built at our Orion Assembly plant. Our manufacturing expertise allows us to meet the same strict standards for safety and quality that we build into all our vehicles. And right now, the all-electric, autonomous Cruise AV is testing on the streets of San Francisco to help transform ridesharing as well as deliveries.",
-          to: "/",
-        },
-      ],
-      characteristic: [
-        {
-          title: "Техническая часть",
-          text:
-            "Autonomous vehicles are already here. Cruise is currently testing AVs on the streets of San Francisco for trips that include ridesharing and deliveries.",
-        },
-        {
-          title: "Техническая часть",
-          text:
-            "Technologies such as LIDAR, which uses laser light technology, help AVs see other vehicles on the road, just as they see pedestrians and bicyclists.",
-        },
-        {
-          title: "Техническая часть",
-          text:
-            "Our vision of AVs is all-electric—with zero tailpipe emissions.",
-        },
-        {
-          title: "Техническая часть",
-          text:
-            "Because human error is the cause of most serious vehicle crashes today, we believe AV technology can help reduce the incidence of crashes.",
-        },
-      ],
-    };
-  },
-  
 };
 </script>

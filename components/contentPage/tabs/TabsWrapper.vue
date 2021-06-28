@@ -5,11 +5,11 @@
           class="ma-2 "
           outlined
           color="white"
-          v-for="(tab, i) in CONTENT"
+          v-for="(tab, i) in content"
           :key="i"
           @click="setTab(tab, i)"
           :class="{ active: i === tabIdx }"
-          >{{ tab.BUTTON_NAME }}</v-btn
+          >{{ tab.button_name }}</v-btn
         >
       </div>
 
@@ -22,30 +22,42 @@
 import AppTab from "../../contentPage/tabs/Tab";
 
 export default {
-  props: ["CONTENT"],
+  name: 'tabs',
+
+  props: {
+    content: {
+      type: Array,
+      require: true,
+    }
+  },
+
   components: {
     AppTab,
   },
+
+  created() {
+    this.tab = this.content.find((item, i) => {
+      if (this.tabIdx === i) {
+        return item;
+      }
+    });
+  },
+
   data() {
     return {
       tabIdx: 0,
       tab: null,
     };
   },
+
   methods: {
     setTab(tab, i) {
-      this.tabIdx = this.CONTENT.indexOf(tab);
+      this.tabIdx = this.content.indexOf(tab);
       this.tab = tab;
-      //console.log(tab,i)
     },
   },
-  created() {
-    this.tab = this.CONTENT.find((item, i) => {
-      if (this.tabIdx === i) {
-        return item;
-      }
-    });
-  },
+
+  
 };
 </script>
 

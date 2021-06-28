@@ -1,5 +1,5 @@
 <template>
-  <section class="partners" style="background: #75c1ff">
+  <section class="partners mb-8" style="background: #75c1ff">
     <v-container>
       <v-row class="py-3" align="center">
         <v-col cols="12" lg="5" md="5" sm="12">
@@ -16,14 +16,14 @@
               <v-list-item-subtitle
                 class="my-1 my-md-3 font-weight-regular text-caption text-center text-md-right"
               >
-                {{ content.subtitle }}
+                {{ content.description }}
                 <v-icon color="white" class="ml-3"
                   >mdi-star</v-icon
                 ></v-list-item-subtitle
               >
             </v-list-item-content>
             <div class="text-center text-md-right">
-              <v-btn class="mx-auto" outlined color="white" to="/partners">
+              <v-btn class="mx-auto" outlined color="white" :to="content.to">
                 Подробней
               </v-btn>
             </div>

@@ -1,11 +1,12 @@
 <template>
   <section class="custom-carousel">
-    <transition name="slide" appear mode="out-in">
+    <transition name="slide" appear mode="out-in" >
       <v-img
         class="custom-carousel_img"
         :src="slider.img"
         v-for="(slider, i) in sliders"
         :key="i"
+        eager
         v-if="i === idx"
       >
         <div class="gradient ma-n-2">
@@ -30,7 +31,7 @@
                 <v-list-item-content
                   class="white--text text-body-2 text-md-h6 font-weight-medium text-center mt-n3"
                 >
-                  {{ slider.text }}
+                  {{ slider.description }}
                 </v-list-item-content>
               </v-list>
             </v-col>
@@ -59,6 +60,13 @@
 <script>
 export default {
   name: 'carousel',
+
+  props: {
+    sliders: {
+      type: Array,
+      require: true
+    }
+  },
   
   data() {
     return {
@@ -66,36 +74,7 @@ export default {
       show: true,
       slide: null,
       timout: 10000,
-      sliders: [
-        {
-          img: "img/DSC_6025-min.jpg",
-          text:
-            "Разработка и производство керамических фильтров для разделения и очистки жидких и газообразных сред!",
-          title: "Пористая керамика",
-          to: "/porousCeramics",
-        },
-        {
-          img: "img/DSC_6036-min.jpg",
-          text:
-            "Производство микро и ультрафильтрационных керамических мембранных фильтров. Проектирование и изготовление экспериментальных и промышленных установок микро и ультрафильтрации. Консультации по вопросам мембранного разделения.",
-          title: "Керамические мембраны",
-          to: "/ceramicMembranes",
-        },
-        {
-          img: "img/_DSC9903-min.jpg",
-          text:
-            "Проектирование и производство стационарных и мобильных установок водоподготовки на основе технологии озоноультрафильтрации с применением  керамических мембранных фильтроэлементов.",
-          title: "Современные технологии водоподготовки",
-          to: "/waterTreatment",
-        },
-        {
-          img: "img/e41c130f622f6a21470226ceafd06af3-min.jpg",
-          text:
-            "Проведение лабораторных испытаний мембранного разделения жидкостей. Очистки и  концентрирования содержащихся веществ. Подбор и определение производительности керамических мембран на продукте заказчика. Исследования и разработка способов регенерации мембранных фильтров.",
-          title: "Лабораторные исследования разделения растворов",
-          to: "/research",
-        },
-      ],
+      
     };
   },
 

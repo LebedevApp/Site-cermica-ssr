@@ -104,8 +104,10 @@ export default {
 
   data() {
     return {
-      email: "info@ceramicfilter.ru",
-      password: "Ceramic-filters-2021",
+      email: "",
+      password: "",
+      // email: "info@ceramicfilter.ru",
+      //password: "Ceramic-filters-2021",
     };
   },
 

@@ -7,14 +7,14 @@
           <v-list-item-content
             class="text-center text-subtitle-1 text-md-h4 font-weight-thin"
           >
-            {{ DESCRIPTION }}
+            {{ description.description }}
           </v-list-item-content>
         </v-container></v-col
       >
       <v-col><v-divider></v-divider></v-col>
     </v-row>
 
-    <app-content :CONTENT="CONTENT" />
+    <app-content :content="content" />
   </section>
 </template>
 
@@ -24,7 +24,16 @@ import AppContent from "@/components/contentPage/content/text-components/Content
 export default {
   name: 'first-content-block',
 
-  props: ['CONTENT' , 'DESCRIPTION'],
+  props: {
+    content: {
+      type: Object,
+      require: true
+    },
+    description: {
+      type: Object,
+      require: true
+    }
+  },
   
   components: { AppContent },
   
@@ -44,38 +53,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.section-line {
-  text-align: center;
-  position: relative;
-  ::before {
-    content: "";
-    height: 1px;
-    display: block;
-    position: absolute;
-    background-color: #474b51;
-    width: 90px;
-    top: 50%;
-  }
-  ::after {
-    content: "";
-    height: 1px;
-    display: block;
-    position: absolute;
-    background-color: #474b51;
-    width: 90px;
-    top: 50%;
-    right: 0;
-  }
-}
-.text {
-  font-size: 1.5rem;
-  text-align: center;
-  position: relative;
-  max-width: 90rem;
-  ::after {
-    display: none;
-  }
-}
-</style>

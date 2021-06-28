@@ -1,6 +1,6 @@
 <template>
   <section class="img">
-    <v-img class="img_item" :src="CONTENT.IMG">
+    <v-img class="img_item" :src="content.img">
       <div class="img_gradient">
         <div class="img_block d-flex justify-start align-center">
           <v-container>
@@ -11,16 +11,16 @@
                 >
                   <span
                     class="light-blue--text text-h4 text-lg-h3 font-weight-black"
-                    >{{ CONTENT.TITLE.split("").slice(0, 3).join("") }}</span
-                  >{{ CONTENT.TITLE.split("").splice(3).join("") }}
+                    >{{ content.title.split("").slice(0, 3).join("") }}</span
+                  >{{ content.title.split("").splice(3).join("") }}
                 </h1>
               </v-list-item-content>
 
               <v-list-item-content
-                v-if="CONTENT.TEXT"
+                v-if="content.text"
                 class="img_text white--text text-body-2 text-md-h6 font-weight-medium text-left my-3"
               >
-                {{ CONTENT.TEXT }}
+                {{ content.text }}
               </v-list-item-content>
             </div>
           </v-container>
@@ -34,7 +34,12 @@
 export default {
   name: 'first-img',
 
-  props: ['CONTENT'],
+  props: {
+    content: {
+      type: Object,
+      require: true
+    }
+  },
 };
 </script>
 

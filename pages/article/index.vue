@@ -6,10 +6,10 @@
       <v-col><v-divider></v-divider></v-col>
       <v-col cols="5"
         ><v-container>
-          <v-list-item-content
-            class="text-center text-subtitle-1 text-md-h4 font-weight-thin"
-          >
-            Какое-то название статьи или контента
+          <v-list-item-content>
+            <p class="text-center text-subtitle-1 text-md-h4 font-weight-thin">
+              Какое-то название статьи или контента
+            </p>
           </v-list-item-content>
         </v-container></v-col
       >
@@ -24,12 +24,12 @@
 import AppArticleFirstImg from "@/components/contentPage/content/img-components/ArticleFirstImg";
 
 export default {
-  name: 'article',
+  name: "article",
 
   components: {
     AppArticleFirstImg,
   },
-  
+
   data() {
     return {
       content: {
@@ -37,6 +37,5 @@ export default {
       },
     };
   },
-  // Нужен computed который принимает data с сервера
 };
 </script>

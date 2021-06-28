@@ -9,7 +9,7 @@
           >
           <div>
             <VueSlickCarousel v-bind="settings" ref="carousel">
-              <div v-for="card in page_articles.cards" :key="card.title">
+              <div v-for="card in cards" :key="card.title">
                 <v-card class="ma-3" min-width="250" max-width="350">
                   <v-img class="img" :src="card.img" alt=""> </v-img>
                   <v-card-text style="position: relative">
@@ -17,7 +17,7 @@
                       class="text-body-2 text-md-h6 text-center text-md-left"
                       >{{ card.title }}</v-card-title
                     >
-                    <v-card-subtitle>{{ card.text }}</v-card-subtitle>
+                    <v-card-subtitle>{{ card.description }}</v-card-subtitle>
                     <div class="btn text-center text-md-right">
                       <v-btn
                         class="mb-3 mr-4"
@@ -62,7 +62,12 @@ export default {
 
   components: { VueSlickCarousel },
 
-  props: ["page_articles"],
+  props: {
+    cards: {
+      type: Array,
+      require: true
+    }
+  },
 
   data() {
     return {

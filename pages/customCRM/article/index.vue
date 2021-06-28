@@ -10,7 +10,6 @@
       <v-col cols="12" md="4" v-for="item in cards" :key="item.title">
         <v-card>
           <v-container>
-            <v-img v-if="item.img" class="img" :src="item.img"></v-img>
             <h4 class="my-2">{{ item.title }}</h4>
             <v-divider class="my-2"></v-divider>
             <p class="my-2">{{ item.date }}</p>
