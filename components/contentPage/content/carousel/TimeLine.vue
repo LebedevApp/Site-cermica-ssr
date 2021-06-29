@@ -2,26 +2,47 @@
   <section class="my-5 channelbox section-time-line">
     <div>
       <v-container>
-      <v-list-item-title class="text-button font-weight-bold grey--text">Наши события</v-list-item-title>
-        <VueSlickCarousel v-bind="settings" ref="carousel">
-          <div v-for="(card, i) in content" :key="i">
-            <v-card class="ma-3" min-width="250" max-width="350" flat>
-              <v-card-title
-                class="subtitle text-body-2 text-md-h6 text-center text-md-left"
-                >{{ card.date }}  <v-divider class="mx-8"></v-divider></v-card-title
+        <v-list-item-title class="text-button font-weight-bold grey--text"
+          >Наши события</v-list-item-title
+        >
+
+        <section id="app">
+          <div class="wrapper d-flex">
+            <div
+              class="wrapper_slide mx-10"
+              v-for="(card, i) in content"
+              :key="i"
+              :style="{
+                transform: 'translateX(-' + 100 * currentSlide + '%)',
+              }"
+            >
+              <v-card
+                class="ma-3"
+                min-width="250"
+                max-width="350"
+                height="400"
+                flat
               >
-              <v-img class="img" :src="card.img" alt=""> </v-img>
-              <v-card-text>
                 <v-card-title
-                  class="text-body-2 text-md-h6 text-center text-md-left"
-                  >{{ card.title }}</v-card-title
-                >
-                <v-card-subtitle>{{ card.description }}</v-card-subtitle>
-              </v-card-text>
-             
-            </v-card>
+                  class="
+                    subtitle
+                    text-body-2 text-md-h6 text-center text-md-left
+                  "
+                  >{{ card.date }} <v-divider class="mx-8"></v-divider
+                ></v-card-title>
+                <v-img class="img" height="200" :src="card.img" alt=""> </v-img>
+                <v-card-text>
+                  <v-card-title
+                    class="text-body-2 text-md-h6 text-center text-md-left"
+                    >{{ card.title }}</v-card-title
+                  >
+                  <v-card-subtitle>{{ card.description }}</v-card-subtitle>
+                </v-card-text>
+              </v-card>
+            </div>
           </div>
-        </VueSlickCarousel>
+        </section>
+
         <v-list-item class="mt-4">
           <v-btn class="mx-4" icon dark color="light-blue" @click="prev">
             <v-icon dark size="48"> mdi-arrow-left-circle </v-icon>
@@ -36,120 +57,52 @@
 </template>
 
 <script>
-import VueSlickCarousel from "vue-slick-carousel";
-
 export default {
-  name: 'time-line',
+  name: "time-line",
 
   props: {
     content: {
       type: Array,
-      require: true
-    }
-  },
-
-  components: {
-    VueSlickCarousel,
+      require: true,
+    },
   },
 
   data() {
     return {
-      settings: {
-        arrows: false,
-        dots: false,
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        pauseOnDotsHover: true,
-        pauseOnFocus: true,
-        autoplay: true,
-        responsive: [
-          {
-            breakpoint: 1280,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-            },
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-            },
-          },
-        ],
-      },
-      cards: [
-        {
-          id: 1,
-          img: "img/pexels-marian.jpg",
-          subtitle: "Март 2019",
-          title: "Событие",
-          text:
-            "GM reimagines existing assembly plant to create Factory ZERO, solely dedicated to electric vehicles and autonomous vehicles.",
-        },
-        {
-          id: 2,
-          img: "img/pexels-marian.jpg",
-          subtitle: "Январь 2019",
-          title: "Событие",
-          text:
-            "A shared mobility experience where self-driving is fueled by cutting-edge artificial intelligence.",
-        },
-        {
-          id: 3,
-          img: "img/pexels-marian.jpg",
-          subtitle: "Феврвль 2018",
-          title: "Событие",
-          text:
-            "GM begins a relationship with San Francisco-based start-up Cruise to accelerate AV deployment.",
-        },
-        {
-          id: 4,
-          img: "img/pexels-marian.jpg",
-          subtitle: "Сентябрь 2020",
-          title: "Событие",
-          text:
-            "Cruise and GM team up with Microsoft to accelerate the commercialization of self-driving vehicles.",
-        },
-        {
-          id: 5,
-          img: "img/pexels-marian.jpg",
-          subtitle: "Май 2021",
-          title: "Событие",
-          text:
-            "Cruise began operating its self-driving test vehicles on the streets of San Francisco without a driver behind the wheel.",
-        },
-      ],
+      currentSlide: 0,
     };
   },
-  
+
   methods: {
-    next() {
-      this.$refs.carousel.next();
-    },
     prev() {
-      this.$refs.carousel.prev();
+      if (this.currentSlide <= 0) {
+        this.currentSlide = this.content.length - 1;
+      } else {
+        this.currentSlide--;
+      }
+    },
+    next() {
+      if (this.currentSlide >= this.content.length - 1) {
+        this.currentSlide = 0;
+      } else {
+        this.currentSlide++;
+      }
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.section-time-line {
+}
+.wrapper_slide {
+  transition: all ease-in-out 0.5s;
+  width: 100%;
+  height: 100%;
+}
+.gradient {
+  background: rgba(0, 0, 0, 0.4);
+}
 .img {
   width: 100%;
 }

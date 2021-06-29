@@ -21,8 +21,8 @@ import AppCarousel from "@/components/contentPage/content/carousel/Carousel";
 import AppAdvantages from "@/components/contentPage/content/cards-components/Advantages";
 import AppContent from "@/components/contentPage/content/text-components/Content";
 import AppPartners from "@/components/contentPage/content/text-components/Partners";
-import AppMultipleCaorusel from "@/components/contentPage/content/carousel/MultipleCaorusel";
 import AppSocialLinks from "@/components/contentPage/content/menu-components/SocialLinks";
+import AppMultipleCaorusel from "@/components/contentPage/content/carousel/NewCarousel.vue";
 
 export default {
   name: "main-page",

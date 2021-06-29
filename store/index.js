@@ -64,7 +64,7 @@ export const state = () => ({
       },
       {
         title: "Статьи",
-        to: "/article-cards"
+        to: "/article"
       },
       {
         title: "Наши партнеры",

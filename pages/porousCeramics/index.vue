@@ -28,7 +28,7 @@ import AppOurService from "@/components/contentPage/content/text-components/OurS
 import AppTabsWrapper from "@/components/contentPage/tabs/TabsWrapper";
 import AppCharacteristic from "@/components/contentPage/content/text-components/Characteristic";
 import AppTimeLine from "@/components/contentPage/content/carousel/TimeLine";
-import AppMultipleCaorusel from "@/components/contentPage/content/carousel/MultipleCaorusel";
+import AppMultipleCaorusel from "@/components/contentPage/content/carousel/NewCarousel.vue";
 import AppSocialLinks from "@/components/contentPage/content/menu-components/SocialLinks";
 
 export default {

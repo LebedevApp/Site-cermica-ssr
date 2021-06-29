@@ -19,7 +19,6 @@
 <script>
 export default {
   middleware({ store, redirect }) {
-    // store.dispatch('onAuthStateChangedAction')
     if (store.state.user.user) {
       return redirect("/customCRM");
     }

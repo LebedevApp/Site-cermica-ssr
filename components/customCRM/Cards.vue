@@ -16,17 +16,20 @@
           <p>{{ item.title }}</p>
           <v-divider></v-divider>
         </div>
-        <div v-if="item.description">
+        <div v-if="item.description" >
           <h4 class="text-h5 font-weight-light text--secondary my-3">Описание карточки</h4>
-          <p>{{ item.description }}</p>
+          <v-divider></v-divider>
+          <p style="white-space: pre-wrap">{{ item.description }}</p>
         </div>
         <div v-if="item.text">
           <h4 class="text-h5 font-weight-light text--secondary my-3">Текст карточки</h4>
-          <p>{{ item.text }}</p>
+          <v-divider></v-divider>
+          <p style="white-space: pre-wrap">{{ item.text }}</p>
         </div>
-        <div v-if="item.article">
+        <div v-if="item.article" >
           <h4 class="text-h5 font-weight-light text--secondary my-3">Статья</h4>
-          <p>{{ item.article }}</p>
+          <v-divider></v-divider>
+          <p style="white-space: pre-wrap">{{ item.article }}</p>
         </div>
         <v-row class="my-2">
           <v-spacer></v-spacer>
