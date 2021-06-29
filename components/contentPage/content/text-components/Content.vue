@@ -1,11 +1,12 @@
 <template>
   <section class="content">
-    <v-container>
+    
       <v-row align="center" class="mb-4">
-        <v-col cols="12" lg="7" md="7" sm="12">
+        <v-col cols="12" lg="6" md="12" sm="12">
           <img class="img" :src="content.img" alt="" />
         </v-col>
-        <v-col cols="12" lg="5" md="5" sm="12">
+        <v-col cols="12" lg="6" md="12" sm="12">
+          <v-container>
           <v-list>
             <v-list-item-content>
               <v-list-item-title
@@ -34,9 +35,10 @@
               </v-btn>
             </div>
           </v-list>
+          </v-container>
         </v-col>
       </v-row>
-    </v-container>
+    
   </section>
 </template>
 
@@ -65,6 +67,7 @@ export default {
 <style lang="scss" scoped>
 .img {
   width: 100%;
+  height: 100%;
 }
 .ctx {
   white-space: pre-wrap;
