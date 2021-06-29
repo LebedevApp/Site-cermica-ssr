@@ -3,7 +3,9 @@
     
       <v-row align="center" class="mb-4">
         <v-col cols="12" lg="6" md="12" sm="12">
-          <img class="img" :src="content.img" alt="" />
+          <v-container>
+            <img class="img" :src="content.img" alt="" />
+          </v-container>
         </v-col>
         <v-col cols="12" lg="6" md="12" sm="12">
           <v-container>

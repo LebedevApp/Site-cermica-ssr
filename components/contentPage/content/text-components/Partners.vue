@@ -1,20 +1,39 @@
 <template>
-  <section class="partners mb-8" style="background: #75c1ff">
-    <v-container>
-      <v-row class="py-3" align="center">
-        <v-col cols="12" lg="5" md="5" sm="12">
+  <section class="partners mb-8 py-10" style="background: #75c1ff">
+    <v-row class="py-3" align="center" justify="center">
+      <v-col cols="12" lg="5" md="5" sm="12">
+        <v-container>
           <v-list color="rgba(0,0,0,0)">
             <v-list-item-content class="white--text">
               <v-list-item-title
-                class="ml-2 text-body-1 text-lg-h4 font-weight-black text-center text-md-right white--text"
+                class="
+                  ml-2
+                  text-body-1 text-lg-h4
+                  font-weight-black
+                  text-center text-md-right
+                  white--text
+                "
                 >{{ content.title }}</v-list-item-title
               >
               <v-list-item-action-text
-                class="my-1 my-md-3 font-weight-light text-caption text-sm-body-2 text-md-body-2 text-xl-h6 text-center text-md-right"
+                class="
+                  my-1 my-md-3
+                  font-weight-light
+                  text-caption
+                  text-sm-body-2
+                  text-md-body-2
+                  text-xl-h6
+                  text-center
+                  text-md-right
+                "
                 >{{ content.text }}</v-list-item-action-text
               >
               <v-list-item-subtitle
-                class="my-1 my-md-3 font-weight-regular text-caption text-center text-md-right"
+                class="
+                  my-1 my-md-3
+                  font-weight-regular
+                  text-caption text-center text-md-right
+                "
               >
                 {{ content.description }}
                 <v-icon color="white" class="ml-3"
@@ -28,8 +47,9 @@
               </v-btn>
             </div>
           </v-list>
-        </v-col>
-        <v-col
+        </v-container>
+      </v-col>
+      <!--<v-col
           cols="12"
           lg="7"
           md="7"
@@ -59,36 +79,49 @@
               />
             </div>
           </div>
-        </v-col>
+        </v-col>-->
 
-        <v-col
-          cols="12"
-          lg="7"
-          md="7"
-          sm="12"
-          class="mobile"
-        >
-          <img :src="icons.map" alt="" class="img" />
-        </v-col>
-      </v-row>
-    </v-container>
+      <v-col cols="12" lg="7" md="7" sm="12" class="mobile visible">
+        <v-container>
+          <v-img :src="icons.map" alt="" class="img visible">
+            <div class="circle_one">
+              <div class="circle_two">
+                <div class="circle_three">
+                  <div
+                    class="
+                      mt-6 mt-md-0
+                      mb-n4 mb-md-0
+                      circle
+                      d-flex
+                      justify-center
+                      align-center
+                    "
+                  >
+                    <div class="circle_content text-h3">LOGO</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </v-img>
+        </v-container>
+      </v-col>
+    </v-row>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'parners',
+  name: "parners",
 
   props: ["content"],
-  
+
   data() {
     return {
       icons: {
-        map: 'russia-map.png',
-        gas: 'ru_wikipedia_org_-min.jpg',
-        mvd: '1061px-Flag_of_N.png'
-
-      }
+        map: "russia-map.png",
+        gas: "ru_wikipedia_org_-min.jpg",
+        mvd: "1061px-Flag_of_N.png",
+      },
     };
   },
   methods: {
@@ -140,6 +173,58 @@ export default {
 <style lang="scss" scoped>
 .img {
   width: 100%;
+  height: 100%;
+  position: relative;
+}
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.circle_one {
+  width: 230px;
+  height: 230px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle_two {
+  width: 310px;
+  height: 310px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle_three {
+  width: 400px;
+  height: 400px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.visible {
+  overflow: visible;
 }
 
 .ros {
@@ -170,7 +255,7 @@ export default {
   }
 }
 
-@media (max-width: 1025px) {
+/*@media (max-width: 1025px) {
   .desctop {
     display: none;
   }
@@ -180,5 +265,5 @@ export default {
   .mobile {
     display: none;
   }
-}
+}*/
 </style>
