@@ -25,12 +25,12 @@
             Текст карточки
           </h4>
           <v-divider></v-divider>
-          <p style="white-space: pre-wrap">{{ card.text }}</p>
+          <p style="white-space: pre-wrap" v-html="card.text"></p>
         </div>
         <div v-if="card.article" >
           <h4 class="text-h5 font-weight-light text--secondary my-3">Статья</h4>
           <v-divider></v-divider>
-          <p style="white-space: pre-wrap">{{ card.article }}</p>
+          <p style="white-space: pre-wrap" v-html="card.article"></p>
         </div>
 
         <div v-if="card.icons">

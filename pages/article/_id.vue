@@ -13,6 +13,7 @@
               {{ $route.params.id }}
             </p>
           </v-list-item-content>
+          
         </v-container></v-col
       >
       <v-col><v-divider></v-divider></v-col>
@@ -31,9 +32,12 @@
           text-md-left
         "
         style="white-space: pre-wrap"
+
+        v-html="$route.query.article"
       >
-        {{ $route.query.article }}
+        
       </p>
+      
       
       <section class="nav my-10">
         <v-list-item>
@@ -47,6 +51,7 @@
 
 <script>
 import AppArticleFirstImg from "@/components/contentPage/content/img-components/ArticleFirstImg";
+
 
 export default {
   name: "article_id",
