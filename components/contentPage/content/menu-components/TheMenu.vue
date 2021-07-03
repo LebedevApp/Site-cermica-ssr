@@ -19,20 +19,38 @@
         solo
         label="Что-то ищем?"
         prepend-icon="mdi-magnify"
+        v-model.trim="search"
+        @input="sendSearh"
       ></v-text-field>
     </v-container>
 
-    <app-links @closeMenu="close" />
+    <transition name="scroll" mode="out-in">
+      <app-links v-if="!search" @closeMenu="close" />
+      <app-search v-else @closeMenu="close" />
+    </transition>
   </div>
 </template>
 
 <script>
 import AppLinks from "@/components/contentPage/content/menu-components/LinksToMenu";
+import AppSearch from "@/components/contentPage/content/menu-components/TheSearch";
 
 export default {
   name: "Menu",
 
-  components: { AppLinks },
+  components: { AppLinks, AppSearch },
+
+  computed: {
+    article() {
+      return this.$store.getters['GET_MULTIPLE']
+    }
+  },
+
+  data() {
+    return {
+      search: null,
+    };
+  },
 
   methods: {
     close() {
@@ -47,6 +65,13 @@ export default {
     removeDescription() {
       this.card = null;
     },
+    sendSearh() {
+      const obj = {
+        search: this.search,
+        article: this.article
+      }
+      this.$store.commit('search/GET_DATA', obj)
+    }
   },
 };
 </script>
@@ -56,7 +81,7 @@ export default {
   width: 100%;
   height: 100%;
   background-color: rgba(117, 193, 255, 1);
-  overflow-y: hidden;
+  overflow-y: scroll;
   position: fixed;
   z-index: 50;
   margin-right: 10px;
@@ -80,5 +105,25 @@ export default {
   .mobile {
     display: none;
   }
+}
+
+//------transition------
+
+.scroll-enter {
+  transform: translateX(100%);
+}
+
+.scroll-enter-to {
+  transform: translateX(0);
+  transition: all .2s;
+}
+
+.scroll-leave {
+  transform: translateX(0);
+  transition: all .2s;
+}
+
+.scroll-leave-to {
+  transform: translateX(-100%);
 }
 </style>
