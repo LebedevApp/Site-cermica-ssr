@@ -1,10 +1,9 @@
 import colors from "vuetify/es5/util/colors";
-import FirebaseModule from '@nuxtjs/firebase'
+import FirebaseModule from "@nuxtjs/firebase";
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'server',
-  
+  target: "server",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -25,7 +24,12 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["~/plugins/firebase.js",{ src: '~/plugins/ymapPlugin.js',  mode: 'client' },{src: '~/plugins/vuelidate'},],
+  plugins: [
+    "~/plugins/firebase.js",
+    { src: "~/plugins/ymapPlugin.js", mode: "client" },
+    { src: "~/plugins/vuelidate" },
+    { src: "~/plugins/maskPhone", ssr: false }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -37,11 +41,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    [
-      FirebaseModule,
-    ]
-  ],
+  modules: [[FirebaseModule]],
 
   firebase: {
     injectModule: false,
@@ -49,26 +49,24 @@ export default {
     config: {
       // REQUIRED: Official config for firebase.initializeApp(config):
       apiKey: "AIzaSyBzERrzyEO8v021Atcp2NCHSgMOZZNew5w",
-          authDomain: "site-caramica-ssr.firebaseapp.com",
-          databaseURL:
-            "https://site-caramica-ssr-default-rtdb.europe-west1.firebasedatabase.app",
-          projectId: "site-caramica-ssr",
-          storageBucket: "site-caramica-ssr.appspot.com",
-          messagingSenderId: "139544990876",
-          appId: "1:139544990876:web:0e9cd9c00534e15071c959"
+      authDomain: "site-caramica-ssr.firebaseapp.com",
+      databaseURL:
+        "https://site-caramica-ssr-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "site-caramica-ssr",
+      storageBucket: "site-caramica-ssr.appspot.com",
+      messagingSenderId: "139544990876",
+      appId: "1:139544990876:web:0e9cd9c00534e15071c959"
     },
     services: {
       database: true,
       auth: {
-        
         initialize: {
           //onAuthStateChangedMutation: 'ON_AUTH_STATE_CHANGED_MUTATION',
-          onAuthStateChangedAction: 'onAuthStateChangedAction',
+          onAuthStateChangedAction: "onAuthStateChangedAction",
           subscribeManually: false
-        },
-        
-      },
-    },
+        }
+      }
+    }
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -94,7 +92,6 @@ export default {
   build: {},
 
   router: {
-    mode: 'hash'
+    mode: "hash"
   }
-
 };

@@ -7,13 +7,12 @@ export const mutations = {
     let res = []
     payload.article.forEach(item => {
         if(payload.search !== '') {
-            if(item.title.toLowerCase().search(payload.search.toLowerCase()) !== -1) {
+            if(item.title.toLowerCase().search(payload.search.toLowerCase()) !== -1 || item.description.toLowerCase().search(payload.search.toLowerCase()) !== -1 ) {
                 res.push(item)
             }
         }
     });
     state.article = res
-    console.log(res)
   }
 };
 

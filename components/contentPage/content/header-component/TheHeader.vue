@@ -83,8 +83,14 @@
                     </v-list-item>
                   </v-list>
                 </v-menu>
-
-                info@ceramicfilter.ru</v-list-item-subtitle
+                <a
+                class="links_tel white--text"
+                style="text-decoration: none ; display: inline"
+                href="mailto:info@ceramicfilter.ru?subject=Обратный звонок"
+              >
+                info@ceramicfilter.ru</a
+              >
+                </v-list-item-subtitle
               >
             </v-list-item-content>
 
@@ -99,50 +105,7 @@
             </v-btn>
 
             <v-dialog v-model="dialog" max-width="500">
-              <v-card>
-                <v-card-title class="headline text-body-1">
-                  Заказать обратный звонок
-                </v-card-title>
-
-                <v-divider></v-divider>
-
-                <v-card-text class="mt-5 mb-n5">
-                  <v-text-field
-                    label="Введите имя"
-                    placeholder="Ваше имя?"
-                    outlined
-                    dense
-                  ></v-text-field>
-                  <v-text-field
-                    label="Введите телефон"
-                    placeholder="Ваш номер телефона?"
-                    outlined
-                    dense
-                  ></v-text-field>
-                </v-card-text>
-
-                <v-divider></v-divider>
-
-                <v-card-actions>
-                  <v-btn
-                    color="red darken-1"
-                    outlined
-                    text
-                    @click="dialog = false"
-                  >
-                    Назад
-                  </v-btn>
-                  <v-spacer></v-spacer>
-                  <v-btn
-                    color="green darken-1"
-                    outlined
-                    text
-                    @click="dialog = false"
-                  >
-                    Заказать
-                  </v-btn>
-                </v-card-actions>
-              </v-card>
+              <app-card-call @closeDialog="closeDialog" />
             </v-dialog>
           </v-row>
         </v-col>
@@ -152,8 +115,14 @@
 </template>
 
 <script>
+import AppCardCall from '@/components/contentPage/content/header-component/TheCardCall'
+
 export default {
   name: 'app-header',
+
+  components: {
+    AppCardCall
+  },
 
   data() {
     return {
@@ -171,6 +140,9 @@ export default {
     openMenu() {
       this.$emit("openMenu");
     },
+    closeDialog() {
+      this.dialog = false
+    }
   },
 };
 </script>

@@ -13,14 +13,10 @@
           class="
             my-1 my-md-3
             font-weight-light
-            text-caption
-            text-sm-body-2
-            text-md-body-2
-            text-xl-h6
-            text-center
+            text-caption text-sm-body-2 text-md-body-2 text-xl-h6 text-center
           "
         >
-        К сожалению ничего не найдено
+          К сожалению ничего не найдено
         </p>
       </div>
     </v-container>
@@ -44,9 +40,9 @@ export default {
   },
 
   methods: {
-      closeMenu() {
-      this.$emit('closeMenu')
-    }
-  }
+    closeMenu() {
+      this.$emit("closeMenu");
+    },
+  },
 };
 </script>
