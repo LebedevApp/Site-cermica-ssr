@@ -4,8 +4,6 @@
 
     <app-advantages :cards="content.cards" :description="content.content" />
 
-    <img class="bf" src="img/porous_ceramics/content_img.jpg" />
-
     <app-content :content="content.content_block" />
 
     <app-partners :content="content.partners_block" />
@@ -49,10 +47,3 @@ export default {
 };
 </script>
 
-
-<style lang="scss" scoped>
-.bf{
-  max-width: 550px;
-  min-width: 350px;
-}
-</style>
