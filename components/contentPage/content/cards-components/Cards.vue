@@ -37,6 +37,7 @@
         </v-card>
       </v-expand-transition>
     </v-hover>
+    <!--<v-img src="img/cards/water.jpg" ></v-img>-->
   </v-list>
 </template>
 

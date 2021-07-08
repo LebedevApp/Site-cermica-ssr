@@ -106,7 +106,7 @@ export default {
   data() {
     return {
       content: {
-        img: "pexels-anamul-rezwan-1145434-min.jpg",
+        img: "img/cards/ceramic_membrana.jpg",
       },
     };
   },

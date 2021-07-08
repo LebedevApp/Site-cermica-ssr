@@ -20,7 +20,7 @@
                 class="ma-3"
                 min-width="250"
                 max-width="350"
-                height="400"
+                height="600"
                 flat
               >
                 <v-card-title
@@ -30,7 +30,7 @@
                   "
                   >{{ card.date }} <v-divider class="mx-8"></v-divider
                 ></v-card-title>
-                <v-img class="img" height="200" :src="card.img" alt=""> </v-img>
+                <v-img class="img" height="250" :src="card.img" alt=""> </v-img>
                 <v-card-text>
                   <v-card-title
                     class="text-body-2 text-md-h6 text-center text-md-left"

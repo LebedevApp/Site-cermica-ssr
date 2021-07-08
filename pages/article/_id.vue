@@ -85,4 +85,14 @@ export default {
       rgba(0, 0, 0, 0.3)
     );
 }
+.dynamic-float {
+  float: left;
+  margin-right: 20px;
+}
+@media (max-width: 430px) {
+  .dynamic-float {
+    float: none;
+    margin: 0 auto;
+  }
+}
 </style>
