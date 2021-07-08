@@ -12,14 +12,15 @@
           style="position: relative"
         >
           <div class="gradient pt-16">
-            <v-card-title
+            <h2
               class="
                 white--text
+                text-center
                 font-weight-black
                 text-body-1 text-sm-body-1 text-md-body-1 text-lg-h6
                 pt-16
               "
-              >{{ card.title }}</v-card-title
+              >{{ card.title }}</h2
             >
             <v-card-text
               class="
@@ -37,7 +38,6 @@
         </v-card>
       </v-expand-transition>
     </v-hover>
-    
   </v-list>
 </template>
 
@@ -49,8 +49,6 @@ export default {
   parent: "advantages-component",
 
   props: ["cards"],
-
-
 };
 </script>
 

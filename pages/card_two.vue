@@ -106,7 +106,7 @@ export default {
   data() {
     return {
       content: {
-        img: "img/cards/ceramic_membrana.jpg",
+        img: "img/cards/porous_full.jpg",
       },
     };
   },
