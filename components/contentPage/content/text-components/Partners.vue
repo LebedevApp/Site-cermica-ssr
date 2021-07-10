@@ -1,5 +1,5 @@
 <template>
-  <section class="partners mb-8 py-10" style="background: #75c1ff">
+  <section class="partners py-10" style="background: #75c1ff">
     <v-row class="py-3" align="center" justify="center">
       <v-col cols="12" lg="5" md="5" sm="12">
         <v-container>
