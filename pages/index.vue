@@ -8,7 +8,7 @@
 
     <app-partners :content="content.partners_block" />
 
-    <app-content :content="content.last_content_block" />
+    <!--<app-content :content="content.last_content_block" />-->
 
     <app-multiple-caorusel :cards="article" />
 

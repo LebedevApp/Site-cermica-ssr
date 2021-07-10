@@ -9,7 +9,7 @@
         <section id="app">
           <div class="wrapper d-flex">
             <div
-              class="wrapper_slide mx-10"
+              class="wrapper_slide mx-5"
               v-for="(card, i) in content"
               :key="i"
               :style="{
@@ -17,7 +17,7 @@
               }"
             >
               <v-card
-                class="ma-3"
+                class="ma-1"
                 min-width="250"
                 max-width="350"
                 height="600"
@@ -33,7 +33,7 @@
                 <v-img class="img" height="250" :src="card.img" alt=""> </v-img>
                 <v-card-text>
                   <v-card-title
-                    class="text-body-2 text-md-h6 text-center text-md-left"
+                    class="text-body-1 text-md-body-2 my-3 font-weight-bold text-center text-md-left"
                     >{{ card.title }}</v-card-title
                   >
                   <v-card-subtitle>{{ card.description }}</v-card-subtitle>
