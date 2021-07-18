@@ -41,48 +41,15 @@
                 ></v-list-item-subtitle
               >
             </v-list-item-content>
-            <div class="text-center text-md-right">
-              <v-btn class="mx-auto" outlined color="white" :to="content.to">
-                Подробней
-              </v-btn>
-            </div>
+
+         
+            
           </v-list>
         </v-container>
       </v-col>
-      <!--<v-col
-          cols="12"
-          lg="7"
-          md="7"
-          sm="12"
-          class="desctop"
-          style="perspective: 1000px"
-        >
-          <div
-            class="card3d px-10 py-16"
-            @mousemove="create3d"
-            @mouseleave="stop3d"
-            @mouseenter="start3d"
-          >
-            <div class="card3d_map" ref="map">
-              <img class="img" :src="icons.map" alt="" ref="img" />
-              <img
-                :src="icons.gas"
-                alt=""
-                class="ros"
-                ref="ros"
-              />
-              <img
-                :src="icons.mvd"
-                alt=""
-                class="gas"
-                ref="gas"
-              />
-            </div>
-          </div>
-        </v-col>-->
 
       <v-col cols="12" lg="7" md="7" sm="12" class="mobile visible">
-        <v-container>
+        <!--<v-container>
           <v-img :src="icons.map" alt="" class="img visible">
             <div class="circle_one">
               <div class="circle_two">
@@ -103,70 +70,39 @@
               </div>
             </div>
           </v-img>
-        </v-container>
+        </v-container>-->
+        <AppPartnerCarousel :content="slider" />
       </v-col>
     </v-row>
   </section>
 </template>
 
 <script>
+import AppPartnerCarousel from '@/components/contentPage/content/carousel/PartnersCaorusel.vue'
+
 export default {
   name: "parners",
 
   props: ["content"],
 
+  components: {
+    AppPartnerCarousel
+  },
+
+  computed: {
+    slider() {
+      return this.$store.getters['GET_PARTNERS']
+    }
+  },
+
   data() {
     return {
       icons: {
         map: "russia-map.png",
-        gas: "ru_wikipedia_org_-min.jpg",
-        mvd: "1061px-Flag_of_N.png",
       },
     };
   },
-  methods: {
-    create3d(e) {
-      let xAxis = ((window.innerWidth + 2350) / 2 - e.pageY) / 10;
-      let yAxis = ((window.innerWidth + 500) / 2 - e.pageX) / 10;
-      this.$refs.map.style.transform = `rotateY(${yAxis}deg) rotateX(${xAxis}deg)`;
-      this.$refs.ros.style.boxShadow = `${yAxis}px ${xAxis}px 20px rgba(0,0,0,0.5)`;
-      this.$refs.gas.style.boxShadow = `${yAxis}px ${xAxis}px 20px rgba(0,0,0,0.5)`;
-    },
-    stop3d() {
-      this.$refs.map.style.transform = `rotateY(0deg) rotateX(0deg)`;
-      this.$refs.map.style.transition = "all .5s ease";
-      //this.$refs.title.style.transform = 'translateZ(0px)'
-      this.$refs.ros.style.transform = "translateZ(0px)";
-      this.$refs.ros.style.boxShadow = "none";
-      this.$refs.ros.style.width = "50px";
-      this.$refs.ros.style.height = "50px";
-      this.$refs.ros.style.top = "5%";
-      this.$refs.ros.style.left = "35%";
-      this.$refs.gas.style.boxShadow = "none";
-      this.$refs.gas.style.width = "50px";
-      this.$refs.gas.style.height = "50px";
-      this.$refs.gas.style.top = "5%";
-      this.$refs.gas.style.left = "5%";
-      this.$refs.img.style.transform = "translateZ(0px)";
-      //this.$refs.btn.style.transform = 'translateZ(0px)'
-    },
-    start3d() {
-      this.$refs.map.style.transition = "none";
-      //this.$refs.title.style.transform = 'translateZ(100px)'
-      this.$refs.ros.style.transform = "translateZ(40px) scaleZ(2.0)";
-      //this.$refs.ros.style.boxShadow = '0 0px 20px'
-      this.$refs.ros.style.width = "70px";
-      this.$refs.ros.style.height = "70px";
-      this.$refs.ros.style.top = "35%";
-      this.$refs.ros.style.left = "25%";
-      this.$refs.gas.style.width = "70px";
-      this.$refs.gas.style.height = "70px";
-      this.$refs.gas.style.top = "55%";
-      this.$refs.gas.style.left = "8%";
-      this.$refs.img.style.transform = "translateZ(80px)";
-      //this.$refs.btn.style.transform = 'translateZ(50px)'
-    },
-  },
+  
 };
 </script>
 

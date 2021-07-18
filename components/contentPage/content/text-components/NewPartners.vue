@@ -27,9 +27,7 @@
                       >{{ content.text }}</v-list-item-action-text
                     >
                   </v-list-item-content>
-                  <v-btn class="ma-2" outlined color="blue darken-1" :to="content.to">
-                    Подробней
-                  </v-btn>
+                  
                 </v-card>
               </v-col>
             </v-row>

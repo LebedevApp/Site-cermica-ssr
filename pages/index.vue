@@ -9,6 +9,7 @@
     <app-partners :content="content.partners_block" />
 
     <!--<app-content :content="content.last_content_block" />-->
+    <app-time-line :content="time_line" />
 
     <app-multiple-caorusel :cards="article" />
 
@@ -23,6 +24,7 @@ import AppContent from "@/components/contentPage/content/text-components/Content
 import AppPartners from "@/components/contentPage/content/text-components/Partners";
 import AppSocialLinks from "@/components/contentPage/content/menu-components/SocialLinks";
 import AppMultipleCaorusel from "@/components/contentPage/content/carousel/NewCarousel.vue";
+import AppTimeLine from "@/components/contentPage/content/carousel/TimeLine";
 
 export default {
   name: "main-page",
@@ -34,6 +36,7 @@ export default {
     AppMultipleCaorusel,
     AppCarousel,
     AppSocialLinks,
+    AppTimeLine
   },
 
   computed: {
@@ -42,6 +45,9 @@ export default {
     },
     article() {
       return this.$store.getters["GET_MULTIPLE"];
+    },
+    time_line() {
+      return this.$store.getters["GET_TIME_LINE"];
     },
   },
 };

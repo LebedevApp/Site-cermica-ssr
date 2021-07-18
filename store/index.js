@@ -1,3 +1,12 @@
+class Partner {
+  constructor (name, img, article) {
+    this.name = name,
+    this.img = img,
+    this.article = article
+  }
+}
+
+
 export const state = () => ({
   database: null,
   contact_info: {
@@ -78,11 +87,50 @@ export const state = () => ({
       }
     ]
   },
+  partners: [
+    {
+      name: 'mvd',
+      img: 'img/logo/mvd.png'
+    },
+    {
+      name: 'mvd',
+      img: 'img/logo/mvd.png'
+    },
+    {
+      name: 'mvd',
+      img: 'img/logo/mvd.png'
+    },
+    {
+      name: 'mvd',
+      img: 'img/logo/mvd.png'
+    },
+    {
+      name: 'mvd',
+      img: 'img/logo/mvd.png'
+    },
+    {
+      name: 'mvd',
+      img: 'img/logo/mvd.png'
+    },
+    {
+      name: 'mvd',
+      img: 'img/logo/mvd.png'
+    },
+    {
+      name: 'mvd',
+      img: 'img/logo/mvd.png'
+    },
+    {
+      name: 'mvd',
+      img: 'img/logo/mvd.png'
+    }
+  ]
 });
 
 export const mutations = {
   SAVE_CONTENT(state, payload) {
     state.database = payload;
+    //console.log(state.database)
   }
 };
 
@@ -92,6 +140,7 @@ export const actions = {
     try {
       const dataV = await this.$fire.database.ref("new_content");
       const ref = (await dataV.once("value")).val();
+      //console.log(ref)
       commit("SAVE_CONTENT", ref);
     } catch (e) {
       commit("user/SET_ERRORS", err.message);
@@ -148,5 +197,14 @@ export const getters = {
   },
   GET_LINKS(state) {
     return state.links_menu
+  },
+  GET_PARTNERS(state) {
+    const res = []
+    const data = state.database.components.partners
+    for(let key in data) {
+      const obj = new Partner(data[key].name, data[key].img, data[key].article)
+      res.push(obj)
+    }
+    return res
   }
 };
