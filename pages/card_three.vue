@@ -98,7 +98,7 @@ export default {
   data() {
     return {
       content: {
-        img: "img/water_treatment/water_tab-min.jpg",
+        img: "img/cards/water_min.jpg",
       },
     };
   },
