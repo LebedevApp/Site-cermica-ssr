@@ -7,9 +7,9 @@
       :description="content.content"
     />
 
-    <app-our-service :content="content.our_servise" />
+    <!--<app-our-service :content="content.our_servise" />
 
-    <app-tabs-wrapper :content="content.tab" />
+    <app-tabs-wrapper :content="content.tab" />-->
 
     <app-time-line :content="time_line" />
 
