@@ -98,7 +98,7 @@ export default {
   data() {
     return {
       content: {
-        img: "pexels-kateryna-babaieva-3678228-min.jpg",
+        img: "img/water_treatment/water_tab-min.jpg",
       },
     };
   },
