@@ -53,7 +53,7 @@ export default {
   background: linear-gradient(
     0deg,
     rgba(1, 87, 155, 0.8),
-    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.6),
     rgba(1, 87, 155, 0.8)
   );
 }
