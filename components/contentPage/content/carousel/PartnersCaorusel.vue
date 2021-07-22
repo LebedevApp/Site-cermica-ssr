@@ -7,7 +7,6 @@
             <v-img class="ma-2" :src="card.img"></v-img>
           </v-card>
         </div>
-        
       </VueSlickCarousel>
     </div>
   </section>

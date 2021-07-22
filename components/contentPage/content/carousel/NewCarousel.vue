@@ -18,7 +18,7 @@
                     transform: 'translateX(-' + 100 * currentSlide + '%)',
                   }"
                 >
-                  <v-card class="ma-3" min-width="250" max-width="350">
+                  <v-card class="ma-3" min-width="250" max-width="350" min-height="430">
                     <v-img class="img" :src="card.img" alt=""> </v-img>
                     <v-card-text style="position: relative">
                       <v-card-title
