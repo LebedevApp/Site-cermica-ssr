@@ -71,22 +71,22 @@ export default {
         {
           link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/patent.PDF?alt=media&token=34d2f4aa-9f88-4269-b769-e41cccb3d155",
           title: "Патент на изобретение",
-          img: "pexels-pixabay-221047-min.jpg",
+          img: "img/documentation/patent.png",
         },
         {
           link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/sert1.PDF?alt=media&token=b7cca081-6dea-40ce-a743-6595418f54cd",
           title: "Сертификат ФОМС",
-          img: "pexels-pixabay-221047-min.jpg",
+          img: "img/documentation/sert1.png",
         },
         {
           link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/sertCard.PDF?alt=media&token=ae6d2ea8-40ea-431c-830e-95fd399017de",
           title: "Сертификат картридж",
-          img: "pexels-pixabay-221047-min.jpg",
+          img: "img/documentation/sertcard.png",
         },
         {
           link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/pasport.pdf?alt=media&token=aeb5478e-bfb6-4b9d-9608-a0168054f5a7",
           title: "Паспорт",
-          img: "pexels-pixabay-221047-min.jpg",
+          img: "img/documentation/pasport.png",
         },
       ],
     };

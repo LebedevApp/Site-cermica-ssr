@@ -75,10 +75,10 @@ export const state = () => ({
         title: "Статьи",
         to: "/article"
       },
-      {
-        title: "Наши партнеры",
-        to: "/partners"
-      }
+      //{
+      //  title: "Наши партнеры",
+      //  to: "/partners"
+      //}
     ],
     contact: [
       {
