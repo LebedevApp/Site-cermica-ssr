@@ -5,9 +5,11 @@
         <v-row align="center">
           <v-col cols="12" lg="6" md="6" sm="12">
             <div
-              class="mt-6 mt-md-0 mb-n4 mb-md-0 circle d-flex justify-center align-center"
+              class="mt-6 mt-md-0 mb-n16 mb-md-0 circle d-flex justify-center align-center"
             >
-              <div class="circle_content text-h3">LOGO</div>
+              <div class="circle_content">
+                 <img height="150" class="logo" src="../../../../static/img/logo/logo-big.png" />
+              </div>
             </div>
           </v-col>
           <v-col cols="12" lg="6" md="6" sm="12" style="height: 600px">
@@ -76,8 +78,8 @@ export default {
 }
 .circle {
   margin: 0 auto;
-  width: 180px;
-  height: 180px;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
   background-color: white;
   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.5);

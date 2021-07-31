@@ -69,7 +69,9 @@
                         align-center
                       "
                     >
-                      <div class="circle_content text-h3">LOGO</div>
+                      <div class="text-center">
+                        <img height="120" class="logo" src="../../../../static/img/logo/logo-big.png" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -213,6 +215,7 @@ export default {
   }
   
 }
+
 .circle_two {
   width: 310px;
   height: 310px;
@@ -236,6 +239,14 @@ export default {
   transform: translate(-50%, -50%);
 }
 
+@media (max-width: 959px) {
+  .circle_one {
+    border: none;
+  }
+  .circle_two, .circle_three {
+    border: none;
+  }
+}
 .visible {
   overflow: visible;
 }

@@ -1,6 +1,6 @@
 <template>
   <section class="works" v-cloak>
-    <v-card tile img="pexels-pixabay-209251-min.jpg">
+    <v-card tile img="img/article/back-main.jpg">
       <div class="gradient py-5">
         <v-container>
           <v-card-title
@@ -110,7 +110,7 @@ export default {
   transition: all ease-in-out 0.5s;
 }
 .gradient {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
 }
 .img {
   width: 100%;

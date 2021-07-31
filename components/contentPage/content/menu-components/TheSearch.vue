@@ -3,7 +3,7 @@
     <v-container>
       <div v-if="search.length > 0">
         <v-row align="center">
-          <v-col cols="12" sm="6" v-for="(card, i) in search" :key="i">
+          <v-col cols="12" sm="4" v-for="(card, i) in search" :key="i">
             <app-card :card="card" @closeMenu="closeMenu" />
           </v-col>
         </v-row>

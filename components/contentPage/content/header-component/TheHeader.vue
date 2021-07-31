@@ -7,16 +7,10 @@
             <v-btn fab icon dark color="white" class="menu" @click="openMenu">
               <v-icon size="36" color="white">mdi-menu</v-icon>
             </v-btn>
-            <h1
-              class="white--text mx-3"
-              style="cursor: pointer"
-              @click="$router.push('/')"
-            >
-              Logo
-            </h1>
+            <img height="60" class="logo ml-1 ml-md-5" src="../../../../static/img/logo/logo-min.png" @click="$router.push('/')" />
           </v-row>
         </v-col>
-        <v-col class="text-right" sm="4">
+        <v-col class="text-right" cols="1" sm="4">
           <v-row justify="end" align="center">
             <v-list-item-content
               class="content_info white--text text-right mr-3"
@@ -157,9 +151,16 @@ export default {
 .links_tel {
   display: block;
 }
-@media (max-width: 460px) {
+.logo {
+  cursor: pointer;
+  height: 60px;
+}
+@media (max-width: 774px) {
   .content_info {
     display: none;
+  }
+  .logo {
+    height: 45px;
   }
 }
 </style>

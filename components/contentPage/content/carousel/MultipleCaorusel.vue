@@ -1,6 +1,6 @@
 <template>
   <section class="works">
-    <v-card tile img="pexels-pixabay-209251-min.jpg">
+    <v-card tile img="img/article/back-main.jpg">
       <div class="gradient py-5">
         <v-container>
           <v-card-title

@@ -9,7 +9,7 @@
     <v-divider></v-divider>
 
     <v-container>
-      <v-form @submit.prevent="onSubmit" ref="callBack">
+      <v-form @submit.prevent="post" ref="callBack">
         <v-card-text class=" mb-n5">
           <p class="text-center">С кем вы хотите связаться?</p>
           <v-radio-group
@@ -112,6 +112,22 @@ export default {
   },
 
   methods: {
+    async post() {
+      const message = this.message;
+      await fetch("/server/mailer", {
+        'method': 'post',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify({message: message}),
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log('is send? ('+data.success+') message: ' + data.message);
+        });
+    },
     close() {
       this.$emit("closeDialog");
     },
