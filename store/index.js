@@ -10,7 +10,7 @@ class Partner {
 export const state = () => ({
   database: null,
   contact_info: {
-    img: "pexels-pixabay-221047-min.jpg",
+    img: "img/contact/contact-img.jpg",
     name: "contact",
     title: "Контактная информация компании",
     coords: [55.760798, 37.678802],
