@@ -20,7 +20,7 @@ app.post('/', function (req, res) {
 })
 
 module.exports = {
-  path: '/server/mailer',
+  path: './server/mailer',
   handler: app
 }
 

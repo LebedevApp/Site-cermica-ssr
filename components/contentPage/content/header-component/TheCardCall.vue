@@ -114,7 +114,7 @@ export default {
   methods: {
     async post() {
       const message = this.message;
-      await fetch("/server/mailer", {
+      await fetch("./server/mailer", {
         'method': 'post',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
