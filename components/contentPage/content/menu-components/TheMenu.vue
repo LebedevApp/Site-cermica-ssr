@@ -3,7 +3,7 @@
     <v-container>
       <v-row justify="space-around" align="center">
         <v-col>
-          <h1 class="white--text">Logo</h1>
+          <img height="60" class="logo ml-1 ml-md-5" src="../../../../static/img/logo/logo-min.png"/>
         </v-col>
         <v-spacer></v-spacer>
         <v-col class="text-right">
