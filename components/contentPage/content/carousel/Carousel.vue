@@ -29,7 +29,7 @@
                   </h1>
                 </v-list-item-content>
                 <v-list-item-content
-                  class="white--text text-body-2 text-md-h6 font-weight-medium text-center mt-n3"
+                  class="text-carousel white--text text-body-2 text-md-h6 font-weight-medium text-center mt-n3"
                 >
                   {{ slider.description }}
                 </v-list-item-content>
@@ -143,6 +143,16 @@ export default {
     rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.15)
   );
+}
+@media (max-height: 340px) {
+  .text-carousel {
+    display: none;
+  }
+}
+@media (max-width: 340px) {
+  .text-carousel {
+    display: none;
+  }
 }
 .active {
   background-color: rgba(0, 0, 0, 0.1);
