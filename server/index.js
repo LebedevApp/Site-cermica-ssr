@@ -41,6 +41,10 @@ const sendMail = (message) => {
     from: 'podsidka@bk.ru',
     to: 'llle8evvv@yandex.ru',
     subject: 'Test message subject',
-    html: 'Message = ' + message,
+    html: `
+    <h4>Поступила новая заявка</h4>
+    <p>Поступила заявка на обратный звонок от ${message.name}</p>
+    <p>Контактный номер телефона ${message.name}: ${message.phone}</p>
+    <p>Просьба связаться с ${radio.prof}: ${radio.phone}</p>`,
   })
 }

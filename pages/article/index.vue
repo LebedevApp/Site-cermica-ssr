@@ -58,6 +58,18 @@ import AppArticleFirstImg from "@/components/contentPage/content/img-components/
 export default {
   name: "article_page",
 
+   head: {
+    title: 'СТАТЬИ',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Описание научных разработок ООО Керамикфильтр. Научные материалы по озонированию и мембранному разделению'
+      }
+    ],
+  },
+
+
   components: {
     AppArticleFirstImg,
   },

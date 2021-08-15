@@ -55,6 +55,17 @@ import AppCards from "@/components/contentPage/content/cards-components/CardsDoc
 export default {
   name: "documentation",
 
+  head: {
+    title: 'ДОКУМЕНТАЦИЯ',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Основная документация на продукцию ООО Керамикфильтр. Патенты, сертификаты, ТУ и другие'
+      }
+    ],
+  },
+
   components: {
     AppArticleFirstImg,
     AppCards,

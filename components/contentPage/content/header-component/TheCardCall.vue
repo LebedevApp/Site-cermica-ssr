@@ -84,8 +84,8 @@ export default {
   },
 
   watch: {
-    row() {
-      console.log(this.row);
+    radio() {
+      console.log(this.radio);
     },
   },
 
@@ -113,13 +113,16 @@ export default {
 
   methods: {
     async post() {
-      const message = 'hello';
       await fetch("/server/index", {
         'method': 'post',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({message: message}),
+        body: JSON.stringify({
+          name: this.name,
+          phone: this.phone,
+          radio: this.radio,
+        }),
       })
         .then((response) => {
           return response.json();

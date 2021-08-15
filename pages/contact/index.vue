@@ -88,6 +88,17 @@ import { yandexMap, ymapMarker } from "vue-yandex-maps";
 export default {
   name: "contact",
 
+  head: {
+    title: 'КОНТАКТЫ',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Москва, набережная академика Туполева, дом 15, корпус 28. Тел. +79689680780'
+      }
+    ],
+  },
+
   components: {
     yandexMap,
     ymapMarker,

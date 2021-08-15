@@ -91,6 +91,17 @@ import AppArticleFirstImg from "@/components/contentPage/content/img-components/
 export default {
   name: "card-three",
 
+  head: {
+    title: 'СИСТЕМЫ ВОДОПОДГОТОВКИ',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Уникальная высокопроизводительная озоно-мембранная технология очистки воды артезианских и поверхностных источников'
+      }
+    ],
+  },
+
   components: {
     AppArticleFirstImg,
   },

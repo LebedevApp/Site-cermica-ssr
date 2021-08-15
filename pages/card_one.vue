@@ -48,6 +48,17 @@ import AppArticleFirstImg from "@/components/contentPage/content/img-components/
 export default {
   name: "card-one",
 
+  head: {
+    title: 'Пористая керамика',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Разработка и выпуск высокопроизводительных керамических фильтров очистки химически агрессивных и эрозионно-активных газовых сред и пара при высоких темпиратурах'
+      }
+    ],
+  },
+
   components: {
     AppArticleFirstImg,
   },

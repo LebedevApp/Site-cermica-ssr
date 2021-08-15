@@ -8,7 +8,6 @@
 
     <app-partners :content="content.partners_block" />
 
-    <!--<app-content :content="content.last_content_block" />-->
     <app-time-line :content="time_line" />
 
     <app-multiple-caorusel :cards="article" />
@@ -28,6 +27,17 @@ import AppTimeLine from "@/components/contentPage/content/carousel/TimeLine";
 
 export default {
   name: "main-page",
+
+  head: {
+    title: 'Ceramic filters',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Производство установок водоподготовки и очистки воды. Производство керамических мембран. Производство пористых керамических фильтров. Лабораторные исследования мембранного разделения жидких сред.'
+      }
+    ],
+  },
 
   components: {
     AppAdvantages,

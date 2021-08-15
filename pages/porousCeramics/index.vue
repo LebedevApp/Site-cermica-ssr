@@ -34,6 +34,17 @@ import AppSocialLinks from "@/components/contentPage/content/menu-components/Soc
 export default {
   name: "porous-ceramics-page",
 
+  head: {
+    title: 'ПОРИСТАЯИ КЕРАМИКА',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Разработка и производство пористых керамических фильтров для разделения и очистки жидких и газообразных сред.'
+      }
+    ],
+  },
+
   components: {
     AppFirstImg,
     AppFirstContentBlock,

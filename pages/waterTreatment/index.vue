@@ -34,6 +34,17 @@ import AppSocialLinks from "@/components/contentPage/content/menu-components/Soc
 export default {
   name: "water-treatment-page",
 
+  head: {
+    title: 'ВОДОПОДГОТОВКА',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Проектирование и производство стационарных и мобильных установок водоподготовки и очистки воды по методу озоно-ультрафильтрации с применением керамических мембранных фильтроэлементов'
+      }
+    ],
+  },
+
   components: {
     AppFirstImg,
     AppFirstContentBlock,

@@ -31,6 +31,17 @@ import AppSocialLinks from "@/components/contentPage/content/menu-components/Soc
 export default {
   name: "research-page",
 
+  head: {
+    title: 'ЛАБОРАТОРНЫЕ ИССЛЕДОВАНИЯ',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Проведение лабораторных испытаний мембранного разделения жидких сред, очистки и концентрирования содержащихся веществ. Подбор и определение производительности керамических мембран на продукте заказчика'
+      }
+    ],
+  },
+
   components: {
     AppFirstImg,
     AppFirstContentBlock,

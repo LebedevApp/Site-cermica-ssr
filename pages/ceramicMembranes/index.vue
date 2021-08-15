@@ -34,6 +34,17 @@ import AppSocialLinks from "@/components/contentPage/content/menu-components/Soc
 export default {
   name: "ceramic-membranes-page",
 
+  head: {
+    title: 'КЕРАМИЧЕСКИЕ МЕМБРАНЫ',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Производство микро и ультрафильтрационных мембранных фильтров. Производство эксперементальных и промышленных установок микро и ультрафильтрации. Консультации по вопросам мембранного'
+      }
+    ],
+  },
+
   components: {
     AppFirstImg,
     AppFirstContentBlock,

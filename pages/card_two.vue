@@ -99,6 +99,17 @@ import AppArticleFirstImg from "@/components/contentPage/content/img-components/
 export default {
   name: "card-two",
 
+  head: {
+    title: 'КЕРАМИЧЕСКИЕ МЕМБРАНЫ',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'ООО Керамикфильтр единственный в России разработчик и производитель керамических мембран'
+      }
+    ],
+  },
+
   components: {
     AppArticleFirstImg,
   },
