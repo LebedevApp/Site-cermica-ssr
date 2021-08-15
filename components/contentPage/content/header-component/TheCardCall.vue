@@ -113,15 +113,18 @@ export default {
 
   methods: {
     async post() {
+      const message = {
+        name: this.name,
+        phone: this.phone,
+        radio: this.radio,
+      };
       await fetch("/server/index", {
         method: "post",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
         },
         body: JSON.stringify({
-          name: this.name,
-          phone: this.phone,
-          radio: this.radio,
+          message: message,
         }),
       })
         .then((response) => {
