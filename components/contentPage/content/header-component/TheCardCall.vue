@@ -10,7 +10,7 @@
 
     <v-container>
       <v-form @submit.prevent="post" ref="callBack">
-        <v-card-text class=" mb-n5">
+        <v-card-text class="mb-n5">
           <p class="text-center">С кем вы хотите связаться?</p>
           <v-radio-group
             v-model="radio"
@@ -94,7 +94,7 @@ export default {
       phone: "",
       name: "",
       radio: null,
-      loading: false
+      loading: false,
     };
   },
 
@@ -114,9 +114,9 @@ export default {
   methods: {
     async post() {
       await fetch("/server/index", {
-        'method': 'post',
+        method: "post",
         headers: {
-          'Content-Type': 'application/json;charset=utf-8'
+          "Content-Type": "application/json;charset=utf-8",
         },
         body: JSON.stringify({
           name: this.name,
@@ -125,10 +125,14 @@ export default {
         }),
       })
         .then((response) => {
+          this.close();
           return response.json();
         })
         .then((data) => {
-          console.log('is send? ('+data.success+') message: ' + data.message);
+          console.log(
+            "is send? (" + data.success + ") message: " + data.message
+          );
+          this.close();
         });
     },
     close() {
@@ -150,16 +154,16 @@ export default {
       return errors;
     },
     onSubmit() {
-        let obj = {}
-        if(this.$refs.callBack.validate()) {
-            obj = {
-                name: this.name,
-                phone: this.phone,
-                radio: this.radio
-            }
-        }
-        console.log(obj)
-    }
+      let obj = {};
+      if (this.$refs.callBack.validate()) {
+        obj = {
+          name: this.name,
+          phone: this.phone,
+          radio: this.radio,
+        };
+      }
+      console.log(obj);
+    },
   },
 };
 </script>

@@ -45,6 +45,6 @@ const sendMail = (message) => {
     <h4>Поступила новая заявка</h4>
     <p>Поступила заявка на обратный звонок от ${message.name}</p>
     <p>Контактный номер телефона ${message.name}: ${message.phone}</p>
-    <p>Просьба связаться с ${radio.prof}: ${radio.phone}</p>`,
+    <p>Просьба связаться с ${message.radio.prof}: ${message.radio.phone}</p>`,
   })
 }
