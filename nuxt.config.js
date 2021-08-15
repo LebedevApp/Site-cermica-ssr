@@ -2,6 +2,7 @@ import colors from "vuetify/es5/util/colors";
 import FirebaseModule from "@nuxtjs/firebase";
 
 export default {
+  mode: 'universal',
   // Target: https://go.nuxtjs.dev/config-target
   target: "server",
 
@@ -93,6 +94,10 @@ export default {
   router: {
     //fallback: true,
     mode: "history"
-  }
+  },
+
+  serverMiddleware: [
+    '~/server/index'
+  ],
  
 };

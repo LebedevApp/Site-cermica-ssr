@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "start": "nuxt start ",
+    "generate": "nuxt generate",
+    "server": "node server/index.js"
   },
   "dependencies": {
     "@mdi/font": "^5.9.55",

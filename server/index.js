@@ -6,6 +6,8 @@ const app = express()
 
 app.use(express.json())
 
+console.log('server up')
+
 app.post('/', function (req, res) {
 
   let message = req.body.message
@@ -20,7 +22,7 @@ app.post('/', function (req, res) {
 })
 
 module.exports = {
-  path: './server/mailer',
+  path: '/server/index',
   handler: app
 }
 
