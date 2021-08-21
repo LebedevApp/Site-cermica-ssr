@@ -30,7 +30,7 @@ const sendMail = (message) => {
     port: 465,
     secure: true,
     auth: {
-      user: 'exempleSF@yandex.ru',
+      login: 'exempleSF@yandex.ru',
       pass: 'siteceramics@V01',
     },
   });
