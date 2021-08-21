@@ -37,7 +37,7 @@ const sendMail = (message) => {
 
   return transporter.sendMail({
     from: 'cermicsfilters@gmail.com',
-    to: 'llle8evvv@yandex.ru',
+    to: ['llle8evvv@yandex.ru', 'info@ceramicfilter.ru'],
     subject: 'Test message subject',
     html: `
     <h4>Поступила новая заявка</h4>
