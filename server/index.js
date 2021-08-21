@@ -26,17 +26,17 @@ module.exports = {
 
 const sendMail = (message) => {
   let transporter = nodemailer.createTransport({
-    host: 'smtp.yandex.ru',
+    host: 'smtp.gmail.com',
     port: 465,
     secure: true,
     auth: {
-      login: 'exempleSF@yandex.ru',
+      user: 'cermicsfilters@gmail.com',
       pass: 'siteceramics@V01',
     },
   });
 
   return transporter.sendMail({
-    from: 'exempleSF@yandex.ru',
+    from: 'cermicsfilters@gmail.com',
     to: 'llle8evvv@yandex.ru',
     subject: 'Test message subject',
     html: `
