@@ -133,7 +133,7 @@ export default {
   },
 
   async fetch() {
-    await this.$store.dispatch("nuxtServerInit");
+    await this.$store.dispatch("nuxtServerInit")
   },
 };
 </script>

@@ -10,9 +10,9 @@ export default {
   head: {
   //   titleTemplate: "%s - site-ceramica-ssr",
   //   title: "site-ceramica-ssr",
-  //   htmlAttrs: {
-  //     lang: "ru"
-  //   },
+     htmlAttrs: {
+       lang: "ru"
+     },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -35,14 +35,18 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
+  generate: {
+    fallback: true
+  },
+
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify"
+    "@nuxtjs/vuetify",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [[FirebaseModule]],
+  modules: [[FirebaseModule], '@nuxtjs/dotenv'],
 
   firebase: {
     injectModule: false,

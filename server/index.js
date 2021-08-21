@@ -1,4 +1,5 @@
 'use strict'
+require("dotenv").config();
 
 const express = require('express')
 const nodemailer = require('nodemailer')
@@ -26,23 +27,23 @@ module.exports = {
 
 const sendMail = (message) => {
   let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    secure: process.env.SMTP_SECURE,
     auth: {
-      user: 'cermicsfilters@gmail.com',
-      pass: 'siteceramics@V01',
+      user: process.env.SMTP_EMAIL,
+      pass: process.env.SMTP_PASSWORD,
     },
   });
 
   return transporter.sendMail({
-    from: 'cermicsfilters@gmail.com',
+    from: process.env.SMTP_EMAIL,
     to: ['llle8evvv@yandex.ru', 'info@ceramicfilter.ru'],
-    subject: 'Test message subject',
+    subject: 'Message User',
     html: `
     <h4>Поступила новая заявка</h4>
     <p>Поступила заявка на обратный звонок от <b>${message.name}</b></p>
     <p>Контактный номер телефона <b>${message.name}</b>: <b>${message.phone}</b></p>
-    <p>Просьба связаться с <b>${message.radio.prof}</b>: <b>${message.radio.name}</b></p>`,
+    <p>Запрошенный контакт для связи <b>${message.radio.prof}</b>: <b>${message.radio.name}</b></p>`,
   })
 }
