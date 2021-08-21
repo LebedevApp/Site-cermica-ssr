@@ -6,8 +6,6 @@ const app = express()
 
 app.use(express.json())
 
-console.log('server up')
-
 app.post('/', function (req, res) {
 
   let message = req.body.message
@@ -28,23 +26,23 @@ module.exports = {
 
 const sendMail = (message) => {
   let transporter = nodemailer.createTransport({
-    host: 'smtp.mail.ru',
+    host: 'smtp.gmail.com',
     port: 465,
     secure: true,
     auth: {
-      user: 'podsidka@bk.ru',
-      pass: 'Qwertyuiop900@',
+      user: 'cermicsfilters@gmail.com',
+      pass: 'siteceramics@V01',
     },
   });
 
   return transporter.sendMail({
-    from: 'podsidka@bk.ru',
+    from: 'cermicsfilters@gmail.com',
     to: 'llle8evvv@yandex.ru',
     subject: 'Test message subject',
     html: `
     <h4>Поступила новая заявка</h4>
-    <p>Поступила заявка на обратный звонок от ${message.name}</p>
-    <p>Контактный номер телефона ${message.name}: ${message.phone}</p>
-    <p>Просьба связаться с ${message.radio.prof}: ${message.radio.name}</p>`,
+    <p>Поступила заявка на обратный звонок от <b>${message.name}</b></p>
+    <p>Контактный номер телефона <b>${message.name}</b>: <b>${message.phone}</b></p>
+    <p>Просьба связаться с <b>${message.radio.prof}</b>: <b>${message.radio.name}</b></p>`,
   })
 }
