@@ -70,7 +70,7 @@
                       "
                     >
                       <div class="text-center">
-                        <img height="120" class="logo" src="../../../../static/img/logo/logo-big.png" />
+                        <img height="110" class="logo" src="../../../../static/img/logo/logo-big.png" />
                       </div>
                     </div>
                   </div>
