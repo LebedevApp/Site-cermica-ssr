@@ -78,7 +78,13 @@ export default {
 
   methods: {
       back() {
-          this.$router.go(-1)
+        const path = this.$route.query.name === 'main' ? '/'
+        : this.$route.query.name === 'research' ? '/research' 
+        : this.$route.query.name === 'porous' ? '/porousCeramics' 
+        : this.$route.query.name === 'water' ? '/waterTreatment'
+        : this.$route.query.name === 'ceramic' ? '/ceramicMembranes' 
+        : 'GET_MULTIPLE'
+        this.$router.push(path)
       },
   }
 };
