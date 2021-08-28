@@ -20,8 +20,8 @@ export default {
   methods: {
     toArticle() {
       this.$router.push({
-        path: "/article/" + this.card.title,
-        query: this.card,
+        path: "/article-carousel/" + this.card.name,
+        query: {name: this.card.title},
       });
       this.$emit('closeMenu')
     },
