@@ -53,13 +53,17 @@ export default {
       type: Object,
       require: false,
     },
+    path: {
+      type: String,
+      require: true
+    }
   },
 
   methods: {
     toArticle() {
       this.$router.push({
         path: '/article/' + this.content.title,
-        query: this.content,
+        query: {name: this.path},
       })
     }
   }

@@ -97,8 +97,8 @@ export default {
     },
     toArticle(card) {
        this.$router.push({
-        path: '/article/' + card.title,
-        query: card,
+        path: '/article-carousel/' + card.name,
+        query: {name: card.title},
       })
     }
   },

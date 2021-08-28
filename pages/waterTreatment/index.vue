@@ -5,6 +5,7 @@
     <app-first-content-block
       :content="content.content_block"
       :description="content.content"
+      path="water"
     />
 
     <app-new-partners :content="content.partners_block" />

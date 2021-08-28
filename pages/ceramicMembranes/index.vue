@@ -5,6 +5,7 @@
     <app-first-content-block
       :content="content.content_block"
       :description="content.content"
+      path="ceramic"
     />
 
     <app-our-service :content="content.our_servise" />

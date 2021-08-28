@@ -14,7 +14,7 @@
       <v-col><v-divider></v-divider></v-col>
     </v-row>
 
-    <app-content :content="content" />
+    <app-content :content="content" :path="path" />
   </section>
 </template>
 
@@ -31,6 +31,10 @@ export default {
     },
     description: {
       type: Object,
+      require: true
+    },
+    path: {
+      type: String,
       require: true
     }
   },

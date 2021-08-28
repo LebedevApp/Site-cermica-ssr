@@ -4,7 +4,7 @@
 
     <app-advantages :cards="content.cards" :description="content.content" />
 
-    <app-content :content="content.content_block" />
+    <app-content :content="content.content_block" path="main" />
 
     <app-partners :content="content.partners_block" />
 

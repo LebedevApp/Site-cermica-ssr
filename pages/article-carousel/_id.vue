@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-img class="img" :src="require(`@/assets/img/main_page/${content.content_block.name}.jpg`)">
+    <v-img class="img" :src="require(`@/assets/img/main_page/${content.name}.jpg`)">
         <div class="gradient"></div>
     </v-img>
 
@@ -10,7 +10,7 @@
         ><v-container>
           <v-list-item-content>
             <p class="text-center text-subtitle-1 text-md-h4 font-weight-thin">
-              {{ content.content_block.title }}
+              {{ content.title }}
             </p>
           </v-list-item-content>
           
@@ -33,7 +33,7 @@
         "
         style="white-space: pre-wrap"
 
-        v-html="content.content_block.article"
+        v-html="content.article"
       >
         
       </p>
@@ -54,7 +54,7 @@ import AppArticleFirstImg from "@/components/contentPage/content/img-components/
 
 
 export default {
-  name: "article_id",
+  name: "article_new_id",
 
   components: {
     AppArticleFirstImg,
@@ -62,18 +62,9 @@ export default {
 
   computed: {
     content() {
-      const path = this.$route.query.name === 'main' ? 'GET_MAIN_PAGE'
-        : this.$route.query.name === 'research' ? 'GET_RESEARCH_PAGE' 
-        : this.$route.query.name === 'porous' ? 'GET_POROUS_CERAMIC_PAGE' 
-        : this.$route.query.name === 'water' ? 'GET_WATER_TREATMENT_PAGE'
-        : this.$route.query.name === 'ceramic' ? 'GET_CERAMIC_MEMBRANES_PAGE' 
-        : 'GET_MULTIPLE'
-      return this.$store.getters[`${path}`]
+      const path = 'GET_MULTIPLE'
+      return this.$store.getters[`${path}`].find(x => x.title === this.$route.query.name)
     },
-  },
-
-  mounted() {
-    console.log(this.content)
   },
 
   methods: {
