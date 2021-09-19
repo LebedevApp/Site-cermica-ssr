@@ -27,19 +27,19 @@ module.exports = {
 
 const sendMail = (message) => {
   let transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    // service: 'Gmail',
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
     secure: process.env.SMTP_SECURE,
-    ignoreTLS:true,
-    requireTLS:false,
+    // ignoreTLS:true,
+    // requireTLS:false,
     auth: {
-      type: "OAuth2",
+      // type: "OAuth2",
       user: process.env.SMTP_EMAIL,
       pass: process.env.SMTP_PASSWORD,
-      clientId: "989327039447-02cr3of6n69qcbdnrsl104jjshf5j1h4.apps.googleusercontent.com",
-      clientSecret: "LL3mctlHPs3udnHBi7Gs_tpS",
-      refreshToken: "1//04XB11KyMlAgrCgYIARAAGAQSNwF-L9IrQtrH-oLyhadluxJyYRsTPppZ2aoZ-4S7545LwrhocvKekk3an-g1TrJQ2BkBlLP6O5U",
+      // clientId: "989327039447-02cr3of6n69qcbdnrsl104jjshf5j1h4.apps.googleusercontent.com",
+      // clientSecret: "LL3mctlHPs3udnHBi7Gs_tpS",
+      // refreshToken: "1//04XB11KyMlAgrCgYIARAAGAQSNwF-L9IrQtrH-oLyhadluxJyYRsTPppZ2aoZ-4S7545LwrhocvKekk3an-g1TrJQ2BkBlLP6O5U",
     },
     // tls: {
     //   rejectUnauthorized: false,
