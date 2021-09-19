@@ -31,6 +31,8 @@ const sendMail = (message) => {
     host: process.env.SMTP_HOST,
     port: process.env.SMTP_PORT,
     secure: process.env.SMTP_SECURE,
+    ignoreTLS:true,
+    requireTLS:false,
     auth: {
       type: "OAuth2",
       user: process.env.SMTP_EMAIL,
