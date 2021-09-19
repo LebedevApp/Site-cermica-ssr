@@ -11,8 +11,6 @@
     <app-time-line :content="time_line" />
 
     <app-multiple-caorusel :cards="article" />
-
-    <app-social-links />
   </main>
 </template>
 
@@ -21,7 +19,6 @@ import AppCarousel from "@/components/contentPage/content/carousel/Carousel";
 import AppAdvantages from "@/components/contentPage/content/cards-components/Advantages";
 import AppContent from "@/components/contentPage/content/text-components/Content";
 import AppPartners from "@/components/contentPage/content/text-components/Partners";
-import AppSocialLinks from "@/components/contentPage/content/menu-components/SocialLinks";
 import AppMultipleCaorusel from "@/components/contentPage/content/carousel/NewCarousel.vue";
 import AppTimeLine from "@/components/contentPage/content/carousel/TimeLine";
 
@@ -45,7 +42,6 @@ export default {
     AppPartners,
     AppMultipleCaorusel,
     AppCarousel,
-    AppSocialLinks,
     AppTimeLine
   },
 

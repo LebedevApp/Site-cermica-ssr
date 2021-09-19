@@ -76,13 +76,11 @@
       </div>
     </v-container>
 
-    <app-social-links />
   </section>
 </template>
 
 <script>
 import AppArticleFirstImg from "@/components/contentPage/content/img-components/ArticleFirstImg";
-import AppSocialLinks from "@/components/contentPage/content/menu-components/SocialLinks";
 import { yandexMap, ymapMarker } from "vue-yandex-maps";
 
 export default {
@@ -103,7 +101,6 @@ export default {
     yandexMap,
     ymapMarker,
     AppArticleFirstImg,
-    AppSocialLinks,
   },
 
   computed: {

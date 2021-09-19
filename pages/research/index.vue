@@ -15,8 +15,6 @@
     <app-time-line :content="time_line" />
 
     <app-multiple-caorusel :cards="article" />
-
-    <app-social-links />
   </main>
 </template>
 
@@ -27,7 +25,6 @@ import AppOurService from "@/components/contentPage/content/text-components/OurS
 import AppTabsWrapper from "@/components/contentPage/tabs/TabsWrapper";
 import AppTimeLine from "@/components/contentPage/content/carousel/TimeLine";
 import AppMultipleCaorusel from "@/components/contentPage/content/carousel/NewCarousel.vue";
-import AppSocialLinks from "@/components/contentPage/content/menu-components/SocialLinks";
 
 export default {
   name: "research-page",
@@ -50,7 +47,6 @@ export default {
     AppTabsWrapper,
     AppTimeLine,
     AppMultipleCaorusel,
-    AppSocialLinks,
   },
 
   computed: {

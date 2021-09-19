@@ -17,8 +17,6 @@
     <app-time-line :content="time_line" />
 
     <app-multiple-caorusel :cards="article" />
-
-    <app-social-links />
   </main>
 </template>
 
@@ -30,7 +28,6 @@ import AppTabsWrapper from "@/components/contentPage/tabs/TabsWrapper";
 import AppTimeLine from "@/components/contentPage/content/carousel/TimeLine";
 import AppNewPartners from "@/components/contentPage/content/text-components/NewPartners";
 import AppMultipleCaorusel from "@/components/contentPage/content/carousel/NewCarousel.vue";
-import AppSocialLinks from "@/components/contentPage/content/menu-components/SocialLinks";
 
 export default {
   name: "water-treatment-page",
@@ -54,7 +51,6 @@ export default {
     AppCharacteristic,
     AppNewPartners,
     AppMultipleCaorusel,
-    AppSocialLinks,
   },
 
   computed: {
