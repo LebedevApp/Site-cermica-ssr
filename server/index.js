@@ -27,10 +27,10 @@ module.exports = {
 
 const sendMail = (message) => {
   let transporter = nodemailer.createTransport({
-    // service: 'Gmail',
+    service: 'Gmail',
     host: process.env.SMTP_HOST,
-    // port: process.env.SMTP_PORT,
-    // secure: process.env.SMTP_SECURE,
+    port: process.env.SMTP_PORT,
+    secure: process.env.SMTP_SECURE,
     auth: {
       type: "login",
       user: process.env.SMTP_EMAIL,
