@@ -32,9 +32,12 @@ const sendMail = (message) => {
     port: process.env.SMTP_PORT,
     secure: process.env.SMTP_SECURE,
     auth: {
-      type: "login",
+      type: "OAuth2",
       user: process.env.SMTP_EMAIL,
-      pass: process.env.SMTP_PASSWORD,
+      clientId: "989327039447-02cr3of6n69qcbdnrsl104jjshf5j1h4.apps.googleusercontent.com",
+      clientSecret: "LL3mctlHPs3udnHBi7Gs_tpS",
+      refreshToken: "1//04XB11KyMlAgrCgYIARAAGAQSNwF-L9IrQtrH-oLyhadluxJyYRsTPppZ2aoZ-4S7545LwrhocvKekk3an-g1TrJQ2BkBlLP6O5U",
+      accessToken: 'ya29.a0ARrdaM-qNG8aYNEjJ5mDJepLlO6xeUqYfYoi4AfeWn51TcjMbqv7yHrH71i65iIo1CrH6Z0omRtk8EWi34MxNxl7vfuiWETDB-qWWi45oJVPTENNF712cFUwwDDjtkKEOfSJkfOcclLb8DtQ-eaZfsTuxZmI'
     },
     // tls: {
     //   rejectUnauthorized: false,
