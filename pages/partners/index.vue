@@ -75,7 +75,6 @@ export default {
       ],
     };
   },
-  // нужен computed который принимает data с сервера
 };
 </script>
 

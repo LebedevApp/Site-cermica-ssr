@@ -29,7 +29,7 @@ export default {
   name: "main-page",
 
   head: {
-    title: 'Ceramic filters',
+    title: 'КЕРАМИЧЕСКИЕ ФИЛЬТРЫ',
     meta: [
       {
         hid: 'description',

@@ -36,7 +36,7 @@ export default {
   name: "porous-ceramics-page",
 
   head: {
-    title: 'ПОРИСТАЯИ КЕРАМИКА',
+    title: 'ПОРИСТАЯ КЕРАМИКА',
     meta: [
       {
         hid: 'description',

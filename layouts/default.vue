@@ -121,7 +121,6 @@ export default {
       this.menu = false;
     },
     saveSQL() {
-      //console.log(this.CONTENT_SITE)
       this.$store.dispatch("crm/LOAD_CONTENT");
     },
     logout() {
