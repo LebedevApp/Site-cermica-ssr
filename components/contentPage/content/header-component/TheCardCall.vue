@@ -83,12 +83,6 @@ export default {
     },
   },
 
-  watch: {
-    radio() {
-      console.log(this.radio);
-    },
-  },
-
   data() {
     return {
       phone: "",
