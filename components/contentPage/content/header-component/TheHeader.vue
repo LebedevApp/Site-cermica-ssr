@@ -57,9 +57,9 @@
                           contact.name
                         }}</v-list-item-title>
                         <v-divider></v-divider>
-                        <v-list-item-subtitle>{{
+                        <v-list-item-content class="body-2 font-weight-light">{{
                           contact.prof
-                        }}</v-list-item-subtitle>
+                        }}</v-list-item-content>
                           </v-list-item-content>
                         </v-list-item>
                         

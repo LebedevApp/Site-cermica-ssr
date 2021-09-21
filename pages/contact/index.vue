@@ -36,6 +36,7 @@
           class="ma-3 py-5"
           min-width="300"
           max-width="300"
+          height="250"
           v-for="people in content.tel"
           :key="people.name"
         >
@@ -49,7 +50,10 @@
           </v-list-item>
           <v-divider class="mt-4"></v-divider>
           <v-card-text>
-            <v-icon class="mx-3">mdi-cog-outline</v-icon> {{ people.prof }}
+            <v-row>
+              <v-col cols="2"><v-icon class="mx-3">mdi-cog-outline</v-icon> </v-col>
+              <v-col><p>{{ people.prof }}</p></v-col>
+            </v-row>
           </v-card-text>
           <v-card-text>
             <v-icon class="mx-3">mdi-phone-outline</v-icon> {{ people.tel }}
