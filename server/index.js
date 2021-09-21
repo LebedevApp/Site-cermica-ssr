@@ -27,18 +27,18 @@ module.exports = {
 
 const sendMail = (message) => {
   let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+    host: smtp.gmail.com,
     port: 465,
-    secure: true,
+    secure: process.env.SMTP_SECURE,
     auth: {
-      user: 'cermicsfilters@gmail.com',
-      pass: 'siteceramics!V01',
+      user: process.env.SMTP_EMAIL,
+      pass: process.env.SMTP_PASSWORD,
       
     }
   });
 
   return transporter.sendMail({
-    from: 'cermicsfilters@gmail.com',
+    from: process.env.SMTP_EMAIL,
     to: ['llle8evvv@yandex.ru', 'info@ceramicfilter.ru'],
     subject: 'Message User',
     html: `
