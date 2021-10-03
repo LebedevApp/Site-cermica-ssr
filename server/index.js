@@ -32,7 +32,7 @@ const sendMail = (message) => {
     secure: true,
     auth: {
       user: 'cermicsfilters@gmail.com',
-      pass: 'siteceramics@V01',
+      pass: 'siteceramics!V01',
       
     }
   });
