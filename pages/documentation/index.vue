@@ -99,6 +99,17 @@ export default {
           title: "Паспорт",
           img: "img/documentation/pasport.png",
         },
+
+        {
+          link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/CARTRIDGES.pdf?alt=media&token=b8b19ffb-5f6d-46c5-b1a5-e8cd8e9fc917",
+          title: "Картриджи фильтрующие с керамическими мембранными элементами",
+          img: "img/documentation/catriges_mini.jpg",
+        },
+        {
+          link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/treatment%20plants.pdf?alt=media&token=2f98fa74-b68a-4136-b153-da47d8988ba4",
+          title: "Установки для очистки сточных вод серии «ФОМС»",
+          img: "img/documentation/treatment_mini.jpg",
+        },
       ],
     };
   },

@@ -9,7 +9,6 @@
           ><v-icon class="mr-2">mdi-book-open-outline </v-icon>Посмотреть</v-btn
         >
       </div>
-      
     </v-container>
   </v-card>
 </template>
