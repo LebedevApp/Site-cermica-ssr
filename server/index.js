@@ -31,14 +31,14 @@ const sendMail = (message) => {
     port: 465,
     secure: true,
     auth: {
-      user: process.env.SMTP_EMAIL,
-      pass: process.env.SMTP_PASSWORD,
+      user: 'cermicsfilters@gmail.com',
+      pass: 'siteceramics@V01',
       
     }
   });
 
   return transporter.sendMail({
-    from: process.env.SMTP_EMAIL,
+    from: 'cermicsfilters@gmail.com',
     to: ['llle8evvv@yandex.ru', 'info@ceramicfilter.ru'],
     subject: 'Message User',
     html: `
