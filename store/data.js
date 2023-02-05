@@ -495,7 +495,6 @@ export const state = () => ({
 export const mutations = {
   SAVE_CONTENT(state, payload) {
     state.database = payload;
-    console.log(payload);
   }
 };
 

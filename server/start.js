@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-console.log('start', process.env.SMTP_HOST)
+// console.log('start', process.env.SMTP_HOST)
 
 const { loadNuxt } = require("nuxt");
 async function start() {

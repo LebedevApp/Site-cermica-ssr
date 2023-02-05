@@ -6,7 +6,6 @@ class Partner {
   }
 }
 
-
 export const state = () => ({
   database: null,
   contact_info: {
@@ -138,7 +137,16 @@ export const state = () => ({
 export const mutations = {
   SAVE_CONTENT(state, payload) {
     state.database = payload;
-    //console.log(state.database)
+  },
+
+  REMOVE_DOCS({ state, dispatch }, id) {
+    if (!state.database || !state.database.components.docs) {
+      return
+    }
+
+    state.database.components.docs = state.database.components.docs.filter(x => x.id !== id)
+
+    dispatch("SAVE_CONTENT", state.database)
   }
 };
 
@@ -148,7 +156,6 @@ export const actions = {
     try {
       const dataV = await this.$fire.database.ref("new_content");
       const ref = (await dataV.once("value")).val();
-      //console.log(ref)
       commit("SAVE_CONTENT", ref);
     } catch (e) {
       commit("user/SET_ERRORS", err.message);
@@ -175,6 +182,51 @@ export const actions = {
       commit("user/SET_ERRORS", err.message);
       throw e;
     }
+  },
+
+  SAVE_DOCS({ commit, state }, payload) {
+    if (!state.database) {
+      return
+    }
+
+    const copyState = JSON.parse(JSON.stringify(state))
+
+    if (!copyState.database.components.docs) {
+      copyState.database.components.docs = [payload]
+    } else {
+      const findedDoc = copyState.database.components.docs.find(x => x.id === payload.id)
+
+      if (findedDoc) {
+        copyState.database.components.docs = copyState.database.components.docs.map(x => {
+          if (x.id === findedDoc.id) {
+            x = payload
+          }
+
+          return x
+        })
+      } else {
+        copyState.database.components.docs.push(payload)
+      }
+    }
+
+    commit("SAVE_CONTENT", copyState.database)
+
+    this.$fire.database.ref("new_content").set(copyState.database)
+  },
+
+  REMOVE_DOCS({ state, commit }, { id }) {
+    if (!state.database || !state.database.components.docs) {
+      return
+    }
+
+    const copyState = JSON.parse(JSON.stringify(state))
+
+    const filteredDocs = copyState.database.components.docs.filter(x => x.id !== id)
+    copyState.database.components.docs = filteredDocs
+
+    commit("SAVE_CONTENT", copyState.database)
+
+    this.$fire.database.ref("new_content").set(copyState.database)
   }
 };
 
@@ -196,6 +248,9 @@ export const getters = {
   },
   GET_TIME_LINE(state) {
     return state.database.components.time_line;
+  },
+  GET_DOCS(state) {
+    return state.database.components.docs || null;
   },
   GET_MULTIPLE(state) {
     return state.database.components.multiple_caorusel;

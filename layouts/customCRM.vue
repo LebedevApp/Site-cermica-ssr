@@ -141,8 +141,20 @@ export default {
               name: "Статьи",
               to: "/customCRM/article",
             },
+            {
+              id: 3,
+              icon: "mdi-rhombus-split",
+              name: "Документы",
+              to: "/customCRM/docs",
+            },
           ],
         },
+        {
+          id: 1,
+          icon: "mdi-rhombus-split",
+          name: "Менеджер файлов",
+          to: "/customCRM/managerFiles",
+        }
       ],
     };
   },

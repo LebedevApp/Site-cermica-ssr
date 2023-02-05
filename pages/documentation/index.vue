@@ -17,7 +17,7 @@
     </v-row>
     <v-container>
       <v-row justify="center">
-        <v-col cols="12" sm="6" md="4" v-for="(card, i) in cards" :key="i">
+        <v-col cols="12" sm="6" md="4" v-for="(card, i) in docs" :key="i">
           <app-cards :card="card" @open="open($event)" />
         </v-col>
       </v-row>
@@ -34,7 +34,7 @@
        <v-container>
         <iframe
           class="frame"
-          :src="card.link"
+          :src="card.url"
           width="100%"
           height="550"
         ></iframe>
@@ -78,40 +78,13 @@ export default {
       },
       dialog: false,
       card: null,
-      cards: [
-        {
-          link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/patent.PDF?alt=media&token=34d2f4aa-9f88-4269-b769-e41cccb3d155",
-          title: "Патент на изобретение",
-          img: "img/documentation/patent.png",
-        },
-        {
-          link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/sert1.PDF?alt=media&token=b7cca081-6dea-40ce-a743-6595418f54cd",
-          title: "Сертификат ФОМС",
-          img: "img/documentation/sert1.png",
-        },
-        {
-          link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/sertCard.PDF?alt=media&token=ae6d2ea8-40ea-431c-830e-95fd399017de",
-          title: "Сертификат картридж",
-          img: "img/documentation/sertcard.png",
-        },
-        {
-          link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/pasport.pdf?alt=media&token=aeb5478e-bfb6-4b9d-9608-a0168054f5a7",
-          title: "Паспорт",
-          img: "img/documentation/pasport.png",
-        },
-
-        {
-          link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/CARTRIDGES.pdf?alt=media&token=b8b19ffb-5f6d-46c5-b1a5-e8cd8e9fc917",
-          title: "ТУ для картриджей с керамическими мембранными элементами серии КМК",
-          img: "img/documentation/catriges_mini.jpg",
-        },
-        {
-          link: "https://firebasestorage.googleapis.com/v0/b/site-caramica-ssr.appspot.com/o/treatment%20plants.pdf?alt=media&token=2f98fa74-b68a-4136-b153-da47d8988ba4",
-          title: "ТУ для установок водоподготоовки и очистки сточных вод серии ФОМС",
-          img: "img/documentation/treatment_mini.jpg",
-        },
-      ],
     };
+  },
+
+  computed: {
+    docs() {
+      return this.$store.getters["GET_DOCS"] || []
+    }
   },
 
   methods: {

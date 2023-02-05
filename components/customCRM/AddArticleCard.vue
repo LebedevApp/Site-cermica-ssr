@@ -108,7 +108,9 @@ export default {
         article: this.article,
         description: this.description,
         arr: this.cards,
+        name: "article"
       };
+      // console.log(ctx)
       this.$store.dispatch("addCard/ADD_CARD", ctx);
       this.$store
         .dispatch("RE_CONTENT")

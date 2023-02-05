@@ -31,6 +31,10 @@
           <v-divider></v-divider>
           <p style="white-space: pre-wrap">{{ item.article }}</p>
         </div>
+
+        <div class="imgs" v-if="item.imgs">
+          <img class="img" v-for="(img, idx) in item.imgs" :src="img" :key="idx" />
+        </div>
         <v-row class="my-2">
           <v-spacer></v-spacer>
 
@@ -95,3 +99,17 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.imgs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+}
+</style>

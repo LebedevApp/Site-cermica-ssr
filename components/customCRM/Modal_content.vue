@@ -72,6 +72,19 @@
         :error-messages="getError($v.article)"
       ></v-textarea>
 
+      <v-divider></v-divider>
+
+      <v-text-field
+        v-if="card.imgs"
+        label="Описание карточки"
+        prepend-inner-icon="mdi-cog-outline"
+        outlined
+        clearable
+        v-model="description"
+        @blur="$v.description.$touch()"
+        :error-messages="getError($v.description)"
+      ></v-text-field>
+
       <v-card-actions>
         <v-btn class="ma-2" outlined color="red" @click="close">
           <v-icon>mdi-pencil</v-icon>Отменить
@@ -181,6 +194,7 @@ export default {
     editCard(card) {
       this.loading = true;
       const res = new Card(this.button_name,this.title,this.description,this.text,this.article, this.date)
+
       this.$store.commit("shared/CLEAN_CARD");
       this.$store.commit("shared/ADD_CARD", card);
       this.$store.commit("shared/EDIT_CARD", res);

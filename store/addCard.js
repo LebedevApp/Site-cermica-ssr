@@ -17,6 +17,9 @@ export const mutations = {
     ADD_CARD(state, payload) {
         state.arr = payload.arr
         const card = new Card(payload.img, payload.title, payload.date, payload.description, payload.article)
+        if (payload.name) {
+            card.name = payload.name
+        }
         state.arr.push(card)
     },
     CLEAR_CARD(state) {

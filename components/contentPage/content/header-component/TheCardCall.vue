@@ -126,9 +126,9 @@ export default {
           return response.json();
         })
         .then((data) => {
-          console.log(
-            "is send? (" + data.success + ") message: " + data.message
-          );
+          // console.log(
+          //   "is send? (" + data.success + ") message: " + data.message
+          // );
           this.close();
         });
     },
@@ -159,7 +159,7 @@ export default {
           radio: this.radio,
         };
       }
-      console.log(obj);
+      // console.log(obj);
     },
   },
 };
